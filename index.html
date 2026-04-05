@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
-<title>Випассана · Mahāsi Sayādaw · A4 Landscape</title>
+<title>Випассана · Mahāsi Sayādaw · 7 страниц</title>
 <style>
 
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Poppins:wght@300;400;500;600&display=swap');
@@ -23,7 +23,6 @@
   --border:     #d0b880;
   --border-lt:  #e8d8b0;
 
-  /* pastel skins */
   --ruby-bg:#fef1ef; --ruby-bd:#e09088; --ruby-hd:#8a2418;
   --jade-bg:#eef8f2; --jade-bd:#80c090; --jade-hd:#165e38;
   --sky-bg: #edf3fa; --sky-bd: #88b0d0; --sky-hd: #18487a;
@@ -32,6 +31,7 @@
   --teal-bg:#edf8f4; --teal-bd:#70c0a8; --teal-hd:#0c6040;
   --sl-bg:  #eef2fa; --sl-bd:  #88a8d0; --sl-hd:  #183068;
   --warm-bg:#fdf7ee; --warm-bd:#c8a870; --warm-hd:#5a3808;
+  --sage-bg:#f0f5ee; --sage-bd:#90b880; --sage-hd:#2a5018;
   --rose-bg:#fef4f6; --rose-bd:#d898a8; --rose-hd:#782038;
 }
 
@@ -45,72 +45,56 @@ body {
   line-height: 1.4;
 }
 
-/* PAGE */
-.page {
-  width: 297mm;
-  min-height: 210mm;
+/* ── PAGES ── */
+.page-ls {
+  width: 297mm; min-height: 210mm;
   padding: 10mm 13mm 12mm;
   background: var(--page-bg);
-  position: relative;
-  overflow: hidden;
+  position: relative; overflow: hidden;
+}
+.page-pt {
+  width: 210mm; min-height: 297mm;
+  padding: 12mm 15mm 14mm;
+  background: var(--page-bg);
+  position: relative; overflow: hidden;
 }
 .page-break { page-break-before: always; break-before: page; }
 
-/* HEADER */
-.hdr {
-  position: relative;
-  text-align: center;
-  border-bottom: 2px solid var(--gold-light);
-  padding-bottom: 8px;
-  margin-bottom: 10px;
-}
-.hdr-tag {
-  font-family: 'Poppins', sans-serif;
-  font-size: 6.5pt;
-  letter-spacing: 3px;
-  color: var(--text-dim);
-  text-transform: uppercase;
-  margin-bottom: 2px;
-}
-.hdr-title {
-  font-family: 'Cinzel', serif;
-  font-size: 20pt;
-  font-weight: 900;
-  color: var(--gold);
-  letter-spacing: 1px;
-  line-height: 1.1;
-}
-.hdr-pali  { font-style: italic; font-size: 10pt; color: var(--text-soft); }
-.hdr-eng   { font-family: 'Poppins',sans-serif; font-size: 6.5pt;
-              letter-spacing: 2px; color: var(--text-dim); }
-.hdr-sub   { font-family: 'Cinzel', serif; font-size: 11pt; font-weight: 700;
-              color: var(--text-main); margin-top: 2px; }
+/* ── HEADER ── */
+.hdr { position: relative; text-align: center;
+        border-bottom: 2px solid var(--gold-light);
+        padding-bottom: 8px; margin-bottom: 10px; }
+.hdr-tag { font-family:'Poppins',sans-serif; font-size:6.5pt;
+            letter-spacing:3px; color:var(--text-dim);
+            text-transform:uppercase; margin-bottom:2px; }
+.hdr-title { font-family:'Cinzel',serif; font-size:18pt; font-weight:800;
+              color:var(--gold); letter-spacing:1px; line-height:1.1; }
+.hdr-pali  { font-style:italic; font-size:10pt; color:var(--text-soft); }
+.hdr-eng   { font-family:'Poppins',sans-serif; font-size:6.5pt;
+              letter-spacing:2px; color:var(--text-dim); }
+.hdr-sub   { font-family:'Cinzel',serif; font-size:11pt; font-weight:700;
+              color:var(--text-main); margin-top:2px; }
+.hdr-small { font-family:'Cinzel',serif; font-size:14pt; font-weight:700;
+              color:var(--text-main); }
+.buddha-wrap { position:absolute; top:0; right:0; width:95px; }
 
-.buddha-wrap { position: absolute; top: 0; right: 0; width: 95px; }
+/* ── GRID ── */
+.grid { display:grid; gap:8px; }
+.col2  { grid-template-columns:1fr 1fr; }
+.col3  { grid-template-columns:1fr 1fr 1fr; }
+.col4  { grid-template-columns:1fr 1fr 1fr 1fr; }
+.col5  { grid-template-columns:1fr 1fr 1fr 1fr 1fr; }
+.col21 { grid-template-columns:2fr 1fr; }
+.col12 { grid-template-columns:1fr 2fr; }
+.col32 { grid-template-columns:3fr 2fr; }
+.s2    { grid-column:span 2; }
+.s3    { grid-column:span 3; }
+.s4    { grid-column:span 4; }
 
-/* GRID */
-.grid { display: grid; gap: 8px; }
-.col2  { grid-template-columns: 1fr 1fr; }
-.col3  { grid-template-columns: 1fr 1fr 1fr; }
-.col4  { grid-template-columns: 1fr 1fr 1fr 1fr; }
-.col5  { grid-template-columns: 1fr 1fr 1fr 1fr 1fr; }
-.col21 { grid-template-columns: 2fr 1fr; }
-.col12 { grid-template-columns: 1fr 2fr; }
-.col32 { grid-template-columns: 3fr 2fr; }
-.s2    { grid-column: span 2; }
-.s3    { grid-column: span 3; }
-.s4    { grid-column: span 4; }
-
-/* CARD */
-.card {
-  background: var(--card-bg);
-  border: 1px solid var(--border-lt);
-  border-top: 3px solid var(--border);
-  border-radius: 2px;
-  overflow: hidden;
-  page-break-inside: avoid;
-  break-inside: avoid;
-}
+/* ── CARD ── */
+.card { background:var(--card-bg); border:1px solid var(--border-lt);
+         border-top:3px solid var(--border); border-radius:2px;
+         overflow:hidden; page-break-inside:avoid; break-inside:avoid; }
 .c-ruby  { background:var(--ruby-bg); border-top-color:var(--ruby-bd); }
 .c-jade  { background:var(--jade-bg); border-top-color:var(--jade-bd); }
 .c-sky   { background:var(--sky-bg);  border-top-color:var(--sky-bd); }
@@ -119,28 +103,23 @@ body {
 .c-teal  { background:var(--teal-bg); border-top-color:var(--teal-bd); }
 .c-sl    { background:var(--sl-bg);   border-top-color:var(--sl-bd); }
 .c-warm  { background:var(--warm-bg); border-top-color:var(--warm-bd); }
-.c-rose  { background:var(--rose-bg); border-top-color:var(--rose-bd); }
+.c-sage  { background:var(--sage-bg); border-top-color:var(--sage-bd); }
 
-.ch { padding: 6px 9px 5px; border-bottom: 1px solid var(--border-lt); }
+.ch { padding:6px 9px 5px; border-bottom:1px solid var(--border-lt); }
 .cn { font-family:'Poppins',sans-serif; font-size:6pt; letter-spacing:2px;
        color:var(--text-dim); text-transform:uppercase; display:block; margin-bottom:1px; }
 .ct { font-family:'Cinzel',serif; font-size:9.5pt; font-weight:700;
        color:var(--text-main); line-height:1.2; }
 .ce { font-size:7.5pt; color:var(--text-soft); font-style:italic; }
 .cp { font-size:7.5pt; color:var(--text-pali); font-style:italic; }
-.c-ruby  .ct { color:var(--ruby-hd); }
-.c-jade  .ct { color:var(--jade-hd); }
-.c-sky   .ct { color:var(--sky-hd); }
-.c-lav   .ct { color:var(--lav-hd); }
-.c-amb   .ct { color:var(--amb-hd); }
-.c-teal  .ct { color:var(--teal-hd); }
-.c-sl    .ct { color:var(--sl-hd); }
-.c-warm  .ct { color:var(--warm-hd); }
-.c-rose  .ct { color:var(--rose-hd); }
+.c-ruby .ct { color:var(--ruby-hd); } .c-jade .ct { color:var(--jade-hd); }
+.c-sky  .ct { color:var(--sky-hd); }  .c-lav  .ct { color:var(--lav-hd); }
+.c-amb  .ct { color:var(--amb-hd); }  .c-teal .ct { color:var(--teal-hd); }
+.c-sl   .ct { color:var(--sl-hd); }   .c-warm .ct { color:var(--warm-hd); }
+.c-sage .ct { color:var(--sage-hd); }
+.cb { padding:7px 9px 9px; }
 
-.cb { padding: 7px 9px 9px; }
-
-/* ITEM */
+/* ── ITEM ── */
 .item { display:grid; grid-template-columns:16px 1fr; gap:4px;
          padding:4px 0; border-bottom:1px solid rgba(0,0,0,0.05); align-items:start; }
 .item:last-child { border-bottom:none; }
@@ -150,7 +129,7 @@ body {
 .ie { font-size:7.5pt; color:var(--text-soft); font-style:italic; }
 .ip { font-size:7.5pt; color:var(--text-pali); font-style:italic; }
 
-/* PATH */
+/* ── PATH ── */
 .gl { font-family:'Poppins',sans-serif; font-size:6pt; letter-spacing:2px;
        text-transform:uppercase; color:var(--text-dim);
        border-bottom:1px solid var(--border-lt); margin:5px 0 3px; padding-bottom:2px; }
@@ -164,22 +143,22 @@ body {
 .ps { background:#ddeaf8; border:1px solid var(--sky-bd); color:var(--sky-hd); }
 .pm { background:#ddf5ea; border:1px solid var(--jade-bd); color:var(--jade-hd); }
 
-/* FACULTIES */
+/* ── FACULTIES ── */
 .fr { display:grid; grid-template-columns:14px 1fr; gap:4px;
        padding:4px 0; border-bottom:1px solid rgba(0,0,0,0.05); align-items:start; }
 .fr:last-child { border-bottom:none; }
 .fn { font-family:'Cinzel',serif; font-size:7.5pt; color:var(--gold-mid); font-weight:700; }
 .fcore { border-left:3px solid var(--gold); padding-left:5px; background:rgba(160,112,32,0.06); }
 
-/* QUALITY (3 jewels) */
+/* ── QUALITY ── */
 .qitem { padding:4px 0; border-bottom:1px solid rgba(0,0,0,0.05); }
 .qitem:last-child { border-bottom:none; }
-.qpa { font-style:italic; font-size:8pt; color:var(--text-pali); margin-bottom:0px; }
+.qpa { font-style:italic; font-size:8pt; color:var(--text-pali); }
 .qru { font-size:8.5pt; font-weight:600; color:var(--text-main); line-height:1.3; }
 .qex { font-size:7.5pt; color:var(--text-soft); line-height:1.3; font-style:italic; }
 .qen { font-size:7pt; color:var(--text-dim); font-style:italic; }
 
-/* JHANA TABLE */
+/* ── JHANA ── */
 .jnote { font-size:7pt; color:var(--text-soft); font-style:italic;
           margin-bottom:5px; padding:3px 6px;
           background:rgba(160,112,32,0.05); border-left:2px solid var(--gold-light); }
@@ -188,31 +167,22 @@ body {
            border:1px solid var(--border-lt); font-size:7pt; }
 .li { display:flex; align-items:center; gap:4px; }
 .ld { display:inline-block; width:8px; height:8px; border-radius:50%; }
-.ld-p { background:#1a7a48; }
-.ld-c { background:#c03828; }
-.ld-a { background:#c0b0a0; }
+.ld-p { background:#1a7a48; } .ld-c { background:#c03828; } .ld-a { background:#c0b0a0; }
 
 .jt { width:100%; border-collapse:collapse; font-size:8pt; }
-.jt th {
-  background:#f0ece0;
-  color:var(--text-main);
-  font-family:'Cinzel',serif;
-  font-size:7pt; font-weight:700;
-  padding:4px 5px;
-  border:1px solid var(--border);
-  text-align:center; vertical-align:bottom;
-}
-.jt td {
-  padding:4px 5px;
-  border:1px solid var(--border-lt);
-  vertical-align:top; line-height:1.3;
-}
+.jt th { background:#f0ece0; color:var(--text-main);
+          font-family:'Cinzel',serif; font-size:7pt; font-weight:700;
+          padding:4px 5px; border:1px solid var(--border);
+          text-align:center; vertical-align:bottom; }
+.jt td { padding:4px 5px; border:1px solid var(--border-lt);
+          vertical-align:top; line-height:1.3; }
 .jt tr:nth-child(even) td { background:rgba(160,112,32,0.025); }
 .sec-row td { background:#ede8d8!important; font-family:'Cinzel',serif;
                font-size:6.5pt; letter-spacing:1.5px; color:var(--text-soft);
                text-transform:uppercase; padding:2px 5px; border-top:1px solid var(--border); }
 .sec-arupa td { background:#e8f5ee!important; color:var(--jade-hd); }
-.jl { font-family:'Cinzel',serif; font-size:8pt; font-weight:700; color:var(--text-main); display:block; }
+.jl { font-family:'Cinzel',serif; font-size:8pt; font-weight:700;
+       color:var(--text-main); display:block; }
 .jp { font-size:7pt; color:var(--text-pali); font-style:italic; }
 .tc { text-align:center; }
 .fp  { color:#1a7a48; font-weight:700; font-size:9pt; }
@@ -220,8 +190,6 @@ body {
 .fa  { color:#b0a090; font-size:8pt; }
 .fup { color:#7a5800; font-weight:600; font-size:7.5pt; }
 .cno { font-size:6pt; color:#c03828; display:block; }
-
-/* ARUPA */
 .ar-row td { background:#f0faf5; }
 .ar-sp { font-family:'Cinzel',serif; font-size:8pt; font-weight:700; color:var(--jade-hd); }
 .ar-pa { font-size:7pt; color:var(--text-pali); font-style:italic; }
@@ -229,7 +197,7 @@ body {
 .ar-obj{ font-size:8pt; color:var(--text-main); }
 .ar-od { font-size:7pt; color:var(--text-soft); font-style:italic; }
 
-/* STAGES */
+/* ── STAGES ── */
 .stage { padding:5px 0; border-bottom:1px solid var(--border-lt); }
 .stage:last-child { border-bottom:none; }
 .st-title { font-family:'Cinzel',serif; font-size:8.5pt; font-weight:700;
@@ -248,7 +216,7 @@ body {
 .ft-stay { background:#e4edf8; border:1px solid #88b0d0; color:#18487a; }
 .ft-free { background:var(--gold-pale); border:1px solid var(--gold-light); color:var(--gold); }
 
-/* FETTERS BOX */
+/* ── FETTERS ── */
 .ftbox { padding:6px 8px; border:1px solid var(--border-lt);
           background:var(--card-bg); margin-bottom:7px; font-size:7.5pt; }
 .ftbox-l { font-family:'Cinzel',serif; font-size:6pt; letter-spacing:1.5px;
@@ -262,7 +230,82 @@ body {
 .ftg-hi .ftg-lbl { color:var(--lav-hd); }
 .ftg-items { color:var(--text-soft); line-height:1.7; font-size:7pt; }
 
-/* PURIFICATION */
+/* ── PROGRESS OF INSIGHT TABLE ── */
+.poi-table { width:100%; border-collapse:collapse; font-size:8pt; }
+.poi-table td { padding:0; border:none; vertical-align:top; }
+
+/* Purification rows (P level) */
+.p-row { display:grid; grid-template-columns:28px 1fr; gap:0;
+          margin:4px 0 2px; border-radius:2px; overflow:hidden; }
+.p-badge { display:flex; align-items:center; justify-content:center;
+            font-family:'Cinzel',serif; font-size:7.5pt; font-weight:700;
+            writing-mode:horizontal-tb; padding:4px 6px; flex-shrink:0; }
+.p-content { padding:5px 8px; }
+.p-ru  { font-family:'Cinzel',serif; font-size:9pt; font-weight:700; line-height:1.3; }
+.p-en  { font-size:7pt; font-style:italic; color:rgba(255,255,255,0.8); margin-top:1px; }
+.p-pa  { font-size:7pt; font-style:italic; color:rgba(255,255,255,0.7); }
+
+/* Colors per purification */
+.p1  { background:#d4e8c8; } .p1 .p-badge { background:#2a5018; color:#fff; } .p1 .p-ru { color:#1a3808; }  .p1 .p-en,.p1 .p-pa { color:#3a6020; }
+.p2  { background:#c8dff0; } .p2 .p-badge { background:#183068; color:#fff; } .p2 .p-ru { color:#0e2048; }  .p2 .p-en,.p2 .p-pa { color:#284080; }
+.p3  { background:#ddd0f0; } .p3 .p-badge { background:#482080; color:#fff; } .p3 .p-ru { color:#301060; }  .p3 .p-en,.p3 .p-pa { color:#583098; }
+.p4  { background:#f0ddc8; } .p4 .p-badge { background:#703808; color:#fff; } .p4 .p-ru { color:#502808; }  .p4 .p-en,.p4 .p-pa { color:#905020; }
+.p5  { background:#fce8e4; } .p5 .p-badge { background:#8a2418; color:#fff; } .p5 .p-ru { color:#601808; }  .p5 .p-en,.p5 .p-pa { color:#a83828; }
+.p6  { background:#e0f0e8; } .p6 .p-badge { background:#0c6040; color:#fff; } .p6 .p-ru { color:#084828; }  .p6 .p-en,.p6 .p-pa { color:#1a7a50; }
+.p7  { background:#f0dba8; } .p7 .p-badge { background:#7a5800; color:#fff; } .p7 .p-ru { color:#503800; }  .p7 .p-en,.p7 .p-pa { color:#907020; }
+
+/* K rows (second level) */
+.k-row { display:grid; grid-template-columns:28px 1fr 1fr; gap:0;
+          margin:1px 0; border:1px solid var(--border-lt);
+          background:var(--card-bg); border-radius:1px; }
+.k-badge { display:flex; align-items:center; justify-content:center;
+            font-family:'Cinzel',serif; font-size:7pt; font-weight:700;
+            color:var(--gold-mid); background:#f5f0e4;
+            border-right:1px solid var(--border-lt); padding:3px 4px; flex-shrink:0; }
+.k-main { padding:4px 7px; border-right:1px solid rgba(0,0,0,0.04); }
+.k-ru   { font-size:8.5pt; font-weight:600; color:var(--text-main); line-height:1.3; }
+.k-en   { font-size:7pt; color:var(--text-soft); font-style:italic; }
+.k-pa   { font-size:7pt; color:var(--text-pali); font-style:italic; }
+.k-cont { font-size:6.5pt; color:var(--text-dim); font-style:italic;
+           padding:4px 7px; border-left:2px solid var(--gold-light);
+           margin:3px 6px; line-height:1.45; }
+.k-side { padding:4px 7px; }
+.k-great-label { font-family:'Poppins',sans-serif; font-size:5.5pt; letter-spacing:1px;
+                  text-transform:uppercase; color:var(--text-dim); display:block; margin-bottom:2px; }
+.k-great-ru { font-size:7.5pt; font-weight:600; color:var(--text-main); line-height:1.3; }
+.k-great-en { font-size:6.5pt; color:var(--text-soft); font-style:italic; line-height:1.3; }
+.k-great-ex { font-size:6pt; color:var(--text-dim); font-style:italic; line-height:1.35; margin-top:2px; }
+
+/* 7 main / 11 remaining sub-label */
+.k-group-label { font-family:'Poppins',sans-serif; font-size:6pt; letter-spacing:2px;
+                  text-transform:uppercase; padding:2px 7px 2px 36px;
+                  margin:3px 0 1px; }
+.k-group-main { color:var(--jade-hd); background:rgba(22,94,56,0.06);
+                 border-left:2px solid var(--jade-bd); }
+.k-group-rest { color:var(--amb-hd); background:rgba(112,56,8,0.05);
+                 border-left:2px solid var(--amb-bd); }
+
+/* c rows (10 corruptions, third level) */
+.c-section { margin:2px 0 2px 28px; background:#fef9f0;
+              border:1px solid var(--amb-bd); border-radius:1px;
+              border-left:3px solid var(--amb-bd); }
+.c-header { padding:3px 8px; background:#fdebd0;
+             font-family:'Cinzel',serif; font-size:7.5pt; font-weight:700;
+             color:var(--amb-hd); border-bottom:1px solid var(--amb-bd); }
+.c-header-note { font-size:6.5pt; font-weight:400; font-style:italic;
+                  color:var(--text-soft); margin-left:6px; }
+.c-grid { display:grid; grid-template-columns:repeat(5,1fr); gap:0;
+           padding:3px 4px; }
+.c-item { padding:3px 5px; border-right:1px solid rgba(224,184,112,0.3);
+           border-bottom:1px solid rgba(224,184,112,0.3); }
+.c-item:nth-child(5n) { border-right:none; }
+.c-item:nth-last-child(-n+5) { border-bottom:none; }
+.c-n   { font-family:'Cinzel',serif; font-size:6pt; color:var(--amb-bd); font-weight:700; }
+.c-ru  { font-size:7.5pt; font-weight:600; color:var(--text-main); line-height:1.3; }
+.c-en  { font-size:6.5pt; color:var(--text-soft); font-style:italic; }
+.c-pa  { font-size:6.5pt; color:var(--text-pali); font-style:italic; }
+
+/* ── PURIFICATION (7) ── */
 .purif { display:grid; grid-template-columns:20px 1fr; gap:5px;
           padding:4px 0; border-bottom:1px solid rgba(0,0,0,0.05); align-items:start; }
 .purif:last-child { border-bottom:none; }
@@ -273,53 +316,169 @@ body {
             color:var(--teal-hd); flex-shrink:0; margin-top:1px; }
 .pcircle-g { background:var(--gold-pale); border-color:var(--gold-light); color:var(--gold); }
 
-/* QUOTE BOX */
-.quote-box {
-  padding:8px 12px;
-  background: linear-gradient(135deg, #fdf8ec, #faf4e4);
-  border:1px solid var(--border);
-  border-left:4px solid var(--gold-mid);
-  margin-top:8px;
-}
+/* ── QUOTE ── */
+.quote-box { padding:8px 12px; background:linear-gradient(135deg,#fdf8ec,#faf4e4);
+              border:1px solid var(--border); border-left:4px solid var(--gold-mid);
+              margin-top:8px; }
 .q-label { font-family:'Cinzel',serif; font-size:6.5pt; letter-spacing:2px;
              color:var(--gold); text-transform:uppercase; margin-bottom:4px; }
-.q-ru  { font-size:9pt; font-style:italic; color:var(--text-main); line-height:1.6; margin-bottom:3px; }
-.q-en  { font-size:8pt; font-style:italic; color:var(--text-soft); line-height:1.5; margin-bottom:2px; }
-.q-pa  { font-size:7.5pt; font-style:italic; color:var(--text-pali); }
+.q-ru { font-size:9pt; font-style:italic; color:var(--text-main); line-height:1.6; margin-bottom:3px; }
+.q-en { font-size:8pt; font-style:italic; color:var(--text-soft); line-height:1.5; margin-bottom:2px; }
+.q-pa { font-size:7.5pt; font-style:italic; color:var(--text-pali); }
 
-/* SECTION DIVIDER */
+/* ── DIVIDERS ── */
 .sdiv { display:flex; align-items:center; gap:7px; margin:7px 0 6px;
          font-family:'Cinzel',serif; font-size:6.5pt; letter-spacing:3px;
          color:var(--text-dim); text-transform:uppercase; }
 .sdiv::before,.sdiv::after { content:''; flex:1; height:1px; background:var(--border-lt); }
+.namo { text-align:center; font-style:italic; font-size:7.5pt;
+         color:var(--text-dim); padding:6px;
+         border-top:1px solid var(--border-lt); margin-top:8px; }
 
-/* PAGE FOOTER */
+/* ── FOOTER ── */
 .pfooter { position:absolute; bottom:5mm; left:13mm; right:13mm;
             border-top:1px solid var(--border-lt); padding-top:2px;
             display:flex; justify-content:space-between;
             font-family:'Poppins',sans-serif; font-size:6pt; color:var(--text-dim);
             letter-spacing:1px; }
+.pfooter-pt { left:15mm; right:15mm; }
 
-.namo { text-align:center; font-style:italic; font-size:7.5pt;
-         color:var(--text-dim); padding:6px;
-         border-top:1px solid var(--border-lt); margin-top:8px; }
-
+/* ── PRINT ── */
 @media print {
   body { background:white; }
-  .page { page-break-after:always; break-after:page; }
-  .page:last-child { page-break-after:avoid; break-after:avoid; }
+  .page-ls,.page-pt { page-break-after:always; break-after:page; }
+  .page-ls:last-child,.page-pt:last-child { page-break-after:avoid; break-after:avoid; }
 }
-@page landscape-page { size: A4 landscape; margin: 0; }
-@page portrait-page  { size: A4 portrait;  margin: 0; }
-@page { size: A4 landscape; margin: 0; }
-.page { page: landscape-page; }
-.page-portrait { page: portrait-page; width: 210mm; min-height: 297mm;
-                  padding: 12mm 15mm 14mm; }
+@page ls { size:A4 landscape; margin:0; }
+@page pt { size:A4 portrait;  margin:0; }
+.page-ls { page:ls; }
+.page-pt { page:pt; }
+
+/* ══ PAGE 3: PROGRESS OF INSIGHT — HIERARCHY ══ */
+.poi-wrap { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+
+/* P-level: coloured section header */
+.poi-p {border:1px solid var(--border-lt);
+  display:flex; align-items:stretch;
+  border-radius:2px; overflow:hidden;
+  margin:3px 0 2px; break-inside:avoid;
+}
+.poi-p-badge {
+  display:flex; align-items:center; justify-content:center;
+  font-family:'Cinzel',serif; font-size:7pt; font-weight:700;
+  padding:3px 7px; flex-shrink:0; min-width:28px;
+  writing-mode:horizontal-tb;
+}
+.poi-p-body { padding:4px 8px; flex:1; }
+.poi-p-ru  { font-family:'Cinzel',serif; font-size:8.5pt; font-weight:700; line-height:1.25; }
+.poi-p-en  { font-size:6.5pt; font-style:italic; margin-top:1px; }
+.poi-p-pa  { font-size:6.5pt; font-style:italic; }
+
+/* colour sets per purification */
+.pp1 { background:#deecd4; } .pp1 .poi-p-badge { background:#2a5018; color:#fff; } .pp1 .poi-p-ru { color:#1a3808; } .pp1 .poi-p-en,.pp1 .poi-p-pa { color:#3a6028; }
+.pp2 { background:#d0e3f2; } .pp2 .poi-p-badge { background:#183068; color:#fff; } .pp2 .poi-p-ru { color:#0e2048; } .pp2 .poi-p-en,.pp2 .poi-p-pa { color:#284080; }
+.pp3 { background:#e0d4f0; } .pp3 .poi-p-badge { background:#482080; color:#fff; } .pp3 .poi-p-ru { color:#301060; } .pp3 .poi-p-en,.pp3 .poi-p-pa { color:#583098; }
+.pp4 { background:#f0dfc8; } .pp4 .poi-p-badge { background:#703808; color:#fff; } .pp4 .poi-p-ru { color:#502808; } .pp4 .poi-p-en,.pp4 .poi-p-pa { color:#905020; }
+.pp5 { background:#f8e4e0; } .pp5 .poi-p-badge { background:#8a2418; color:#fff; } .pp5 .poi-p-ru { color:#601808; } .pp5 .poi-p-en,.pp5 .poi-p-pa { color:#a83828; }
+.pp6 { background:#d8f0e8; } .pp6 .poi-p-badge { background:#0c6040; color:#fff; } .pp6 .poi-p-ru { color:#084828; } .pp6 .poi-p-en,.pp6 .poi-p-pa { color:#1a7a50; }
+.pp7 { background:#f0dba8; } .pp7 .poi-p-badge { background:#7a5800; color:#fff; } .pp7 .poi-p-ru { color:#503800; } .pp7 .poi-p-en,.pp7 .poi-p-pa { color:#907020; }
+
+/* K-level row */
+.poi-k {
+  display:grid; grid-template-columns:26px 1fr;
+  margin:1px 0; border:1px solid var(--border-lt);
+  background:var(--card-bg); break-inside:avoid;
+}
+.poi-k-badge {
+  display:flex; align-items:center; justify-content:center;
+  font-family:'Cinzel',serif; font-size:6.5pt; font-weight:700;
+  color:var(--gold-mid); background:#f5f0e4;
+  border-right:1px solid var(--border-lt);
+  padding:2px 3px; flex-shrink:0;
+}
+.poi-k-body { padding:3px 7px; }
+.poi-k-ru { font-size:8pt; font-weight:600; color:var(--text-main); line-height:1.3; }
+.poi-k-en { font-size:6.5pt; color:var(--text-soft); font-style:italic; }
+.poi-k-pa { font-size:6.5pt; color:var(--text-pali); font-style:italic; }
+
+/* C-block: 10 corruptions under K4 */
+.poi-c-wrap {
+  margin:2px 0 2px 26px;
+  border:1px solid var(--amb-bd);
+  border-left:3px solid var(--amb-bd);
+  background:#fdf6ec;
+  break-inside:avoid;
+}
+.poi-c-hdr {
+  padding:3px 8px;
+  background:#fde8c0;
+  font-family:'Cinzel',serif; font-size:7.5pt; font-weight:700;
+  color:var(--amb-hd); border-bottom:1px solid var(--amb-bd);
+}
+.poi-c-hdr-note {
+  font-size:6pt; font-weight:400; font-style:italic;
+  color:var(--text-soft); margin-left:6px;
+}
+.poi-c-grid { display:grid; grid-template-columns:repeat(5,1fr); }
+.poi-c-item {
+  padding:2px 5px;
+  border-right:1px solid rgba(224,184,112,0.35);
+  border-bottom:1px solid rgba(224,184,112,0.35);
+}
+.poi-c-item:nth-child(5n) { border-right:none; }
+.poi-c-item:nth-last-child(-n+5) { border-bottom:none; }
+.poi-c-n  { font-family:'Cinzel',serif; font-size:5.5pt; color:var(--amb-bd); font-weight:700; }
+.poi-c-ru { font-size:7pt; font-weight:600; color:var(--text-main); line-height:1.25; }
+.poi-c-en { font-size:6pt; color:var(--text-soft); font-style:italic; }
+.poi-c-pa { font-size:6pt; color:var(--text-pali); font-style:italic; }
+
+/* group sub-label inside P6 */
+.poi-group-lbl {
+  font-family:'Poppins',sans-serif; font-size:5.5pt;
+  letter-spacing:2px; text-transform:uppercase;
+  padding:2px 7px 2px 32px; margin:2px 0 1px;
+}
+.poi-gl-main { color:var(--jade-hd); background:rgba(22,94,56,0.07); border-left:2px solid var(--jade-bd); }
+.poi-gl-rest { color:var(--amb-hd); background:rgba(112,56,8,0.05); border-left:2px solid var(--amb-bd); }
+
+/* ══ PAGE 4: 18 GREAT INSIGHT KNOWLEDGES ══ */
+.gik-wrap { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+.gik-section-hdr {
+  font-family:'Cinzel',serif; font-size:9pt; font-weight:700;
+  color:var(--gold); border-bottom:2px solid var(--gold-light);
+  padding-bottom:4px; margin-bottom:6px; letter-spacing:0.5px;
+}
+.gik-section-sub {
+  font-size:7pt; font-style:italic;
+  color:var(--text-soft); margin-left:8px; font-weight:400;
+}
+.gik-item {
+  display:grid; grid-template-columns:22px 1fr;
+  gap:5px; padding:5px 0;
+  border-bottom:1px solid rgba(0,0,0,0.06);
+  break-inside:avoid; align-items:start;
+}
+.gik-item:last-child { border-bottom:none; }
+.gik-n {
+  font-family:'Cinzel',serif; font-size:8pt; font-weight:700;
+  color:var(--gold-mid); text-align:right; padding-top:1px;
+}
+.gik-body {}
+.gik-ru { font-size:9pt; font-weight:600; color:var(--text-main); line-height:1.3; }
+.gik-en { font-size:7pt; color:var(--text-soft); font-style:italic; }
+.gik-pa { font-size:7pt; color:var(--text-pali); font-style:italic; margin-bottom:2px; }
+.gik-comment {
+  font-size:7pt; color:var(--text-dim); font-style:italic;
+  line-height:1.4;
+  padding:2px 5px; margin-top:2px;
+  border-left:2px solid var(--gold-light);
+  background:rgba(200,160,64,0.05);
+}
 
 </style>
 </head>
 <body>
-<div class="page">
+<div class="page-ls">
   <div class="hdr">
       <div class="buddha-wrap"><svg viewBox="0 0 95 132" xmlns="http://www.w3.org/2000/svg">
   <defs>
@@ -328,19 +487,15 @@ body {
       <stop offset="100%" stop-color="#f0c060" stop-opacity="0"/>
     </radialGradient>
     <radialGradient id="bg" cx="50%" cy="28%" r="62%">
-      <stop offset="0%" stop-color="#d4aa58"/>
-      <stop offset="100%" stop-color="#8a5e18"/>
+      <stop offset="0%" stop-color="#d4aa58"/><stop offset="100%" stop-color="#8a5e18"/>
     </radialGradient>
     <radialGradient id="fg" cx="44%" cy="38%" r="56%">
-      <stop offset="0%" stop-color="#e8c870"/>
-      <stop offset="100%" stop-color="#b88030"/>
+      <stop offset="0%" stop-color="#e8c870"/><stop offset="100%" stop-color="#b88030"/>
     </radialGradient>
   </defs>
-  <!-- Halo -->
   <circle cx="47" cy="48" r="32" fill="url(#hg)"/>
   <circle cx="47" cy="48" r="32" fill="none" stroke="#c89030" stroke-width="0.7" opacity="0.5"/>
   <circle cx="47" cy="48" r="27" fill="none" stroke="#c89030" stroke-width="0.3" opacity="0.3"/>
-  <!-- Throne -->
   <rect x="12" y="119" width="71" height="8" rx="2" fill="#c89030" opacity="0.35"/>
   <g opacity="0.75">
     <ellipse cx="20" cy="120" rx="8" ry="4.5" fill="#b07028"/>
@@ -349,77 +504,62 @@ body {
     <ellipse cx="62" cy="118" rx="8" ry="4.5" fill="#c08030"/>
     <ellipse cx="74" cy="120" rx="8" ry="4.5" fill="#b07028"/>
   </g>
-  <!-- Body -->
   <path d="M16 122 Q12 104 14 94 Q16 84 47 82 Q78 84 80 94 Q82 104 78 122 Z" fill="url(#bg)" opacity="0.88"/>
-  <!-- Folds -->
   <path d="M28 122 Q26 104 30 90" stroke="#7a5018" stroke-width="0.6" fill="none" opacity="0.45"/>
   <path d="M38 122 Q37 104 38 87" stroke="#7a5018" stroke-width="0.4" fill="none" opacity="0.35"/>
   <path d="M57 122 Q58 104 56 87" stroke="#7a5018" stroke-width="0.4" fill="none" opacity="0.35"/>
   <path d="M66 122 Q68 104 64 91" stroke="#7a5018" stroke-width="0.6" fill="none" opacity="0.45"/>
-  <!-- Left shoulder -->
   <path d="M14 94 Q10 84 15 76 Q20 69 30 73 Q22 77 22 85 Q20 90 18 95 Z" fill="#c08030" opacity="0.75"/>
-  <!-- Right arm raised -->
   <path d="M78 90 Q84 78 82 68 Q80 62 77 60 Q74 58 73 63 Q72 71 74 78 Q76 85 76 91 Z" fill="#d4a850" opacity="0.88"/>
-  <!-- Right hand -->
   <ellipse cx="78" cy="59" rx="5.5" ry="6.5" fill="url(#fg)"/>
   <path d="M74 57 Q72 51 74 48 Q76 46 77 49 Q78 52 77 56" fill="#d0a040" stroke="#a07028" stroke-width="0.3"/>
   <path d="M77 56 Q76 50 78 47 Q80 45 81 48 Q82 52 80 56" fill="#d0a040" stroke="#a07028" stroke-width="0.3"/>
   <path d="M80 57 Q80 51 82 49 Q84 47 84 51 Q84 55 82 57" fill="#d0a040" stroke="#a07028" stroke-width="0.3"/>
   <path d="M83 59 Q84 54 85 53 Q87 52 87 56 Q87 59 85 60" fill="#d0a040" stroke="#a07028" stroke-width="0.3"/>
   <path d="M74 61 Q72 63 73 66 Q74 68 76 67 Q77 66 77 63" fill="#d0a040" stroke="#a07028" stroke-width="0.3"/>
-  <!-- Left hand dhyana -->
   <ellipse cx="37" cy="106" rx="12" ry="5.5" fill="#c08838" opacity="0.88"/>
   <ellipse cx="47" cy="106" rx="9" ry="4.5" fill="#d4a850" opacity="0.88"/>
-  <!-- Neck -->
   <rect x="41" y="76" width="11" height="8" rx="3" fill="url(#fg)"/>
-  <!-- Head -->
   <ellipse cx="47" cy="57" rx="16" ry="18" fill="url(#fg)"/>
-  <!-- Ushnisha -->
   <ellipse cx="47" cy="41" rx="7.5" ry="8.5" fill="#c08838"/>
   <ellipse cx="47" cy="38" rx="5" ry="5" fill="#d4a850"/>
   <ellipse cx="47" cy="36" rx="3" ry="3" fill="#e0b860"/>
   <ellipse cx="47" cy="34" rx="1.5" ry="1.5" fill="#f0c060"/>
-  <!-- Flame -->
   <path d="M47 28 Q45 22 47 16 Q49 22 47 28" fill="#f0c060" opacity="0.65"/>
-  <!-- Earlobes -->
   <ellipse cx="31" cy="61" rx="3.5" ry="5.5" fill="#c08838" opacity="0.88"/>
   <ellipse cx="63" cy="61" rx="3.5" ry="5.5" fill="#c08838" opacity="0.88"/>
-  <!-- Eyes -->
   <path d="M38 60 Q41 57 45 60" stroke="#3a2008" stroke-width="0.9" fill="none"/>
   <path d="M49 60 Q53 57 57 60" stroke="#3a2008" stroke-width="0.9" fill="none"/>
-  <!-- Eyebrows -->
   <path d="M36 57 Q41 54 45 56" stroke="#6a3808" stroke-width="0.7" fill="none" opacity="0.65"/>
   <path d="M49 56 Q53 54 58 57" stroke="#6a3808" stroke-width="0.7" fill="none" opacity="0.65"/>
-  <!-- Nose -->
   <path d="M45 62 Q47 66 49 62" stroke="#9a6820" stroke-width="0.5" fill="none"/>
-  <!-- Smile -->
   <path d="M42 71 Q47 75 52 71" stroke="#9a6820" stroke-width="0.7" fill="none"/>
-  <!-- Urna -->
   <circle cx="47" cy="57" r="1.3" fill="#f0c060" opacity="0.9"/>
-  <!-- Rays from hand -->
   <g opacity="0.12">
     <line x1="80" y1="56" x2="95" y2="40" stroke="#c09028" stroke-width="1.2"/>
     <line x1="82" y1="57" x2="95" y2="52" stroke="#c09028" stroke-width="0.9"/>
     <line x1="80" y1="60" x2="95" y2="62" stroke="#c09028" stroke-width="0.9"/>
   </g>
 </svg></div>
-      <div class="hdr-tag">Инфографика · Випассана по методу достопочтенного Mahāsi Sayādaw</div>
-      <div class="hdr-title">Випассана · Vipassanā</div>
-      <div class="hdr-sub">THERAVĀDA VIPASSANĀ MEDITATION · КЛЮЧЕВЫЕ КОНЦЕПЦИИ ПУТИ</div>
+      <div class="hdr-tag">Инфографика · Випассана по методу достопочтенного Махаси Саядо</div>
+      <div class="hdr-title">Випассана (Виденье "Как есть") · Vipassanā</div>
+      <div class="hdr-pali">Mahāsi Sayādaw · မဟာစည်ဆရာတော်</div><div class="hdr-sub">КЛЮЧЕВЫЕ КОНЦЕПЦИИ ПУТИ "ЧИСТОГО ПРОЗРЕНИЯ" НА ОСНОВЕ ТРАКТАТА "MANUAL OF INSIGHT" · Visuddhinana-katha</div>
     </div>
-  <div class="sdiv">06-А · 5 Совокупностей (Кандх) — Сферы Наблюдения</div>
-  <div class="grid" style="grid-template-columns:1fr;">
-    <div class="card c-lav" style="grid-column:span 5;">
+  <div class="sdiv">00 · 5 Совокупностей (Кандх) — Сферы Наблюдения</div>
+  <div class="grid" style="grid-template-columns:1fr;"><div class="card c-lav" style="grid-column:span 5;">
   <div class="ch">
-    <span class="cn">06-А · Практическая ось наблюдения</span>
+    <span class="cn">00 · Практическая ось наблюдения</span>
     <div class="ct">5 Совокупностей (Кандх) — Сферы Наблюдения в Випассане</div>
     <div class="ce">Five Aggregates of Clinging — Domains of Vipassanā Investigation</div>
     <div class="cp">Pañcupādānakkhandhā</div>
+	<div class="quote-box">
+      <div class="q-label">Сабба-сутта · СН 35.23 · «Всё»</div>
+      <div class="q-ru">«Что такое "всё"? Просто глаз и зрительные объекты, ухо и звуки, нос и запахи, язык и вкус, тело и осязание, ум и объекты ума. Это, монахи, называется "всем"»</div>
+      <div class="q-pa">Cakkhuñca paṭicca rūpe ca uppajjati cakkhuviññāṇaṃ...</div>
+    </div>
   </div>
   <div class="cb">
     <div class="grid col5">
-
-      <!-- I: Rupa -->
       <div style="background:#f3eefa;border:1px solid var(--lav-bd);padding:7px 8px;border-radius:2px;">
         <div style="font-family:'Cinzel',serif;font-size:8.5pt;font-weight:700;color:var(--lav-hd);margin-bottom:1px;">I. Форма / Form</div>
         <div style="font-style:italic;font-size:7.5pt;color:var(--text-pali);margin-bottom:4px;">Rūpa-kkhandha</div>
@@ -427,26 +567,24 @@ body {
         <div style="padding:3px 0;border-bottom:1px solid rgba(0,0,0,0.06);">
           <div style="font-size:8.5pt;font-weight:500;">Земля · Earth</div>
           <div style="font-size:7pt;font-style:italic;color:var(--text-pali);">Paṭhavī-dhātu</div>
-          <div style="font-size:7pt;color:var(--text-soft);">Твёрдость / мягкость<br>Hardness / softness</div>
+          <div style="font-size:7pt;color:var(--text-soft);">Твёрдость / мягкость · Hardness / softness</div>
         </div>
         <div style="padding:3px 0;border-bottom:1px solid rgba(0,0,0,0.06);">
           <div style="font-size:8.5pt;font-weight:500;">Огонь / Температура · Fire</div>
           <div style="font-size:7pt;font-style:italic;color:var(--text-pali);">Tejo-dhātu</div>
-          <div style="font-size:7pt;color:var(--text-soft);">Тепло / холод<br>Heat / cold</div>
+          <div style="font-size:7pt;color:var(--text-soft);">Тепло / холод · Heat / cold</div>
         </div>
         <div style="padding:3px 0;border-bottom:1px solid rgba(0,0,0,0.06);">
           <div style="font-size:8.5pt;font-weight:500;">Ветер / Воздух · Wind</div>
           <div style="font-size:7pt;font-style:italic;color:var(--text-pali);">Vāyu-dhātu</div>
-          <div style="font-size:7pt;color:var(--text-soft);">Вибрация, движение, напряжение, жёсткость, расслабление<br>Vibration, motion, tension, rigidity, relaxation</div>
+          <div style="font-size:7pt;color:var(--text-soft);">Вибрация, движение, напряжение, жёсткость, расслабление, давление</div>
         </div>
         <div style="padding:3px 0;">
           <div style="font-size:8.5pt;font-weight:500;">Вода / Сцепление · Water</div>
           <div style="font-size:7pt;font-style:italic;color:var(--text-pali);">Āpo-dhātu</div>
-          <div style="font-size:7pt;color:var(--text-soft);">Текучесть, сцепление, влажность<br>Fluidity, cohesion, moisture</div>
+          <div style="font-size:7pt;color:var(--text-soft);">Текучесть, сцепление, влажность</div>
         </div>
       </div>
-
-      <!-- II: Vedana -->
       <div style="background:#eef8f2;border:1px solid var(--jade-bd);padding:7px 8px;border-radius:2px;">
         <div style="font-family:'Cinzel',serif;font-size:8.5pt;font-weight:700;color:var(--jade-hd);margin-bottom:1px;">II. Чувства / Feelings</div>
         <div style="font-style:italic;font-size:7.5pt;color:var(--text-pali);margin-bottom:4px;">Vedanā-kkhandha</div>
@@ -457,107 +595,71 @@ body {
           <div style="font-size:7pt;color:var(--text-soft);">Pleasant feeling</div>
         </div>
         <div style="padding:4px 0;border-bottom:1px solid rgba(0,0,0,0.06);">
-          <div style="font-size:8.5pt;font-weight:500;">Неприятное</div>
+          <div style="font-size:8.5pt;font-weight:500;">Неприятное / Болезненное</div>
           <div style="font-size:7pt;font-style:italic;color:var(--text-pali);">Dukkha-vedanā</div>
           <div style="font-size:7pt;color:var(--text-soft);">Unpleasant / painful feeling</div>
         </div>
         <div style="padding:4px 0;">
-          <div style="font-size:8.5pt;font-weight:500;">Не приятное / Не неприятное</div>
+          <div style="font-size:8.5pt;font-weight:500;">Не приятное / Не неприятное / Не болезненное</div>
           <div style="font-size:7pt;font-style:italic;color:var(--text-pali);">Adukkhamasukha-vedanā</div>
           <div style="font-size:7pt;color:var(--text-soft);">Neutral / neither-pleasant-nor-unpleasant</div>
         </div>
-        <div style="margin-top:7px;font-size:6.5pt;color:var(--text-dim);font-style:italic;border-top:1px solid rgba(0,0,0,0.06);padding-top:3px;">
-          ★ В медитации: наблюдение тональности каждого ощущения без реакции
-        </div>
+        <div style="margin-top:7px;font-size:6.5pt;color:var(--text-dim);font-style:italic;border-top:1px solid rgba(0,0,0,0.06);padding-top:3px;">★ В медитации: наблюдение тональности каждого ощущения без реакции</div>
       </div>
-
-      <!-- III: Sanna -->
       <div style="background:#edf3fa;border:1px solid var(--sky-bd);padding:7px 8px;border-radius:2px;">
         <div style="font-family:'Cinzel',serif;font-size:8.5pt;font-weight:700;color:var(--sky-hd);margin-bottom:1px;">III. Восприятие / Perception</div>
         <div style="font-style:italic;font-size:7.5pt;color:var(--text-pali);margin-bottom:4px;">Saññā-kkhandha</div>
-        <div style="font-size:6.5pt;background:#fef8e4;border:1px solid #d0b060;padding:2px 4px;margin-bottom:4px;color:#7a4010;">
-          ⚠ Не путать с Viññāṇa (5-я кандха)!<br>Saññā — распознавание, не сознание.
-        </div>
+        <div style="font-size:6.5pt;background:#fef8e4;border:1px solid #d0b060;padding:2px 4px;margin-bottom:4px;color:#7a4010;">⚠ Не путать с Viññāṇa (5-я кандха)! Saññā — распознавание, не сознание.</div>
         <div style="font-size:7pt;color:var(--text-soft);font-style:italic;margin-bottom:6px;border-left:2px solid var(--sky-bd);padding-left:4px;">Распознавание и маркировка объектов по характерным признакам (nimitta).</div>
-        <div style="font-size:8pt;color:var(--text-main);line-height:1.7;">
-          · Распознавание форм, цветов<br>
-          · Распознавание звуков, запахов<br>
-          · Распознавание вкусов, осязания<br>
-          · Концептуализация и именование<br>
-          · «Память на признаки» объектов
-        </div>
+        <div style="font-size:8pt;color:var(--text-main);line-height:1.7;">· Распознавание форм, цветов<br>· Распознавание звуков, запахов<br>· Распознавание вкусов, осязания<br>· Концептуализация и именование<br>· «Память на признаки» объектов</div>
         <div style="margin-top:5px;font-size:7pt;font-style:italic;color:var(--text-pali);">Recognition, labeling, categorizing sense-objects by their marks</div>
       </div>
-
-      <!-- IV: Sankhara -->
       <div style="background:#fdf4e8;border:1px solid var(--amb-bd);padding:7px 8px;border-radius:2px;">
         <div style="font-family:'Cinzel',serif;font-size:8.5pt;font-weight:700;color:var(--amb-hd);margin-bottom:1px;">IV. Формации / Formations</div>
         <div style="font-style:italic;font-size:7.5pt;color:var(--text-pali);margin-bottom:4px;">Saṅkhāra-kkhandha</div>
-        <div style="font-size:7pt;color:var(--text-soft);font-style:italic;margin-bottom:6px;border-left:2px solid var(--amb-bd);padding-left:4px;">Волевые умственные конструкции, намерения, привычки, реакции — всё, что «формирует» опыт и карму. Cetanā (намерение) — ядро.</div>
-        <div style="font-size:8pt;color:var(--text-main);line-height:1.7;">
-          · Намерение (Cetanā) — кармический двигатель<br>
-          · Внимание (Manasikāra)<br>
-          · Вера (Saddhā), Усилие (Viriya)<br>
-          · Жадность (Lobha), Ненависть (Dosa)<br>
-          · Неведение (Moha)<br>
-          · 52 умственных фактора (cetasikā)
-        </div>
+        <div style="font-size:7pt;color:var(--text-soft);font-style:italic;margin-bottom:6px;border-left:2px solid var(--amb-bd);padding-left:4px;">Волевые умственные конструкции, намерения, привычки, реакции. Cetanā (намерение) — ядро.</div>
+        <div style="font-size:8pt;color:var(--text-main);line-height:1.7;">· Намерение (Cetanā) — кармический двигатель<br>· Внимание (Manasikāra)<br>· Вера (Saddhā), Усилие (Viriya)<br>· Жадность / Страстное желание / Влечение к объекту (Lobha), Ненависть / Неприязнь / Отторжение (Dosa)<br>· Неведение (Moha)<br>· 52 умственных фактора (cetasikā)</div>
         <div style="margin-top:5px;font-size:7pt;font-style:italic;color:var(--text-pali);">Volitional formations, cetasikā — the karmic impulse (cetanā as core)</div>
       </div>
-
-      <!-- V: Vinnana -->
       <div style="background:#fef1ef;border:1px solid var(--ruby-bd);padding:7px 8px;border-radius:2px;">
         <div style="font-family:'Cinzel',serif;font-size:8.5pt;font-weight:700;color:var(--ruby-hd);margin-bottom:1px;">V. Сознание / Consciousness</div>
         <div style="font-style:italic;font-size:7.5pt;color:var(--text-pali);margin-bottom:4px;">Viññāṇa-kkhandha</div>
         <div style="font-size:7pt;color:var(--text-soft);font-style:italic;margin-bottom:6px;border-left:2px solid var(--ruby-bd);padding-left:4px;">Базовое осознавание объекта, возникающее при контакте органа чувств с объектом. 6 видов.</div>
-        <div style="font-size:8pt;color:var(--text-main);line-height:1.7;">
-          Сознавание объекта как:<br>
-          · видимое (глаз) / visible (eye)<br>
-          <span style="font-size:7pt;color:var(--text-pali);">Cakkhu-viññāṇa</span><br>
-          · слышимое (ухо) / audible (ear)<br>
-          <span style="font-size:7pt;color:var(--text-pali);">Sota-viññāṇa</span><br>
-          · запах (нос) / smell (nose)<br>
-          <span style="font-size:7pt;color:var(--text-pali);">Ghāna-viññāṇa</span><br>
-          · вкус (язык) / taste (tongue)<br>
-          <span style="font-size:7pt;color:var(--text-pali);">Jivhā-viññāṇa</span><br>
-          · осязаемое (тело) / tactile (body)<br>
-          <span style="font-size:7pt;color:var(--text-pali);">Kāya-viññāṇa</span><br>
-          · умственное / mental object (mind)<br>
-          <span style="font-size:7pt;color:var(--text-pali);">Mano-viññāṇa</span>
+        <div style="font-size:8pt;color:var(--text-main);line-height:1.7;">Сознавание объекта как:<br>
+          · видимое глазом / visible (eye)<br><span style="font-size:7pt;color:var(--text-pali);">Cakkhu-viññāṇa</span><br>
+          · слышимое ухом / audible (ear)<br><span style="font-size:7pt;color:var(--text-pali);">Sota-viññāṇa</span><br>
+          · запах (нос) / smell (nose)<br><span style="font-size:7pt;color:var(--text-pali);">Ghāna-viññāṇa</span><br>
+          · вкус (язык) / taste (tongue)<br><span style="font-size:7pt;color:var(--text-pali);">Jivhā-viññāṇa</span><br>
+          · осязаемое телом / tactile (body)<br><span style="font-size:7pt;color:var(--text-pali);">Kāya-viññāṇa</span><br>
+          · умственное / mental object (mind)<br><span style="font-size:7pt;color:var(--text-pali);">Mano-viññāṇa</span>
         </div>
       </div>
     </div>
-
-    <!-- QUOTE SN 35.23 -->
-    <div class="quote-box">
-      <div class="q-label">Сутта · SN 35.23 · Sabba-sutta · «Всё»</div>
-      <div class="q-ru">«Что такое "всё"? Просто глаз и зрительные объекты, ухо и звуки, нос и запахи, язык и вкус, тело и осязание, ум и объекты ума. Это, монахи, называется "всем"».</div>
-      <div class="q-pa">Cakkhuñca paṭicca rūpe ca uppajjati cakkhuviññāṇaṃ... — Saṃyutta Nikāya 35.23</div>
-    </div>
   </div>
-</div>
-  </div>
+</div></div>
   <div class="pfooter">
         <span>ВИПАССАНА · MAHĀSI SAYĀDAW TRADITION · THERAVĀDA</span>
-        <span>Стр. 1 из 4 · 5 Кандх · Pañcakkhandhā</span>
+        <span>Стр. 1 из 7 · 5 Кандх · Pañcakkhandhā</span>
       </div>
-</div><div class="page page-break page-portrait">
-  <div class="hdr" style="text-align:left;margin-bottom:8px;padding-bottom:6px;">
-    <div class="hdr-tag">Стр. 2 · Ключевые структуры пути</div>
-    <div class="hdr-title" style="font-size:14pt;">01–05 · Помехи · Факторы · Способности · Путь · Искажения Прозрения</div>
-  </div>
-  <div class="grid col3" style="margin-bottom:8px;">
+</div><div class="page-ls page-break">
+  <div class="hdr">
+      <div class="hdr-tag">Стр. 2 · Ключевые структуры пути</div>
+      <div class="hdr-title">Помехи · Факторы · Способности · Путь</div>
+      
+    </div>
+  <div class="grid col4" style="margin-bottom:8px;">
     <div class="card c-ruby">
   <div class="ch">
       <span class="cn">01</span>
       <div class="ct">5 Помех</div>
+      <div class="ce">Five Hindrances</div>
       <div class="cp">Pañca Nīvaraṇāni</div>
     </div>
   <div class="cb">
     <div class="item">
         <div class="in">1</div>
         <div>
-          <div class="ir">Чувственное желание</div>
+          <div class="ir">Чувственные желания / Влечение (цепляние) к объекту</div>
           <div class="ie">Sensual desire</div>
           <div class="ip">Kāmacchanda</div>
         </div>
@@ -565,7 +667,7 @@ body {
     <div class="item">
         <div class="in">2</div>
         <div>
-          <div class="ir">Недоброжелательность / Злоба</div>
+          <div class="ir">Недоброжелательность / Злоба / Неприязнь</div>
           <div class="ie">Ill-will / Aversion</div>
           <div class="ip">Vyāpāda</div>
         </div>
@@ -573,7 +675,7 @@ body {
     <div class="item">
         <div class="in">3</div>
         <div>
-          <div class="ir">Лень и сонливость</div>
+          <div class="ir">Лень и сонливость, апатия</div>
           <div class="ie">Sloth &amp; Torpor</div>
           <div class="ip">Thīna-middha</div>
         </div>
@@ -600,13 +702,15 @@ body {
   <div class="ch">
       <span class="cn">02</span>
       <div class="ct">7 Факторов Просветления</div>
+      <div class="ce">Seven Enlightenment Factors</div>
       <div class="cp">Satta Bojjhaṅgā</div>
     </div>
   <div class="cb">
     <div class="item">
         <div class="in">1</div>
         <div>
-          <div class="ir">Внимательное осознавание</div>
+          <div class="ir">Внимательное осознавание / Бдительное восприятие</div>
+          <div class="ie">Mindfulness</div>
           <div class="ip">Sati-bojjhaṅga</div>
         </div>
       </div>
@@ -614,6 +718,7 @@ body {
         <div class="in">2</div>
         <div>
           <div class="ir">Исследование явлений</div>
+          <div class="ie">Investigation of Phenomena</div>
           <div class="ip">Dhammavicaya-bojjhaṅga</div>
         </div>
       </div>
@@ -621,6 +726,7 @@ body {
         <div class="in">3</div>
         <div>
           <div class="ir">Ментальное усилие / Энергия</div>
+          <div class="ie">Energy / Effort</div>
           <div class="ip">Viriya-bojjhaṅga</div>
         </div>
       </div>
@@ -628,6 +734,7 @@ body {
         <div class="in">4</div>
         <div>
           <div class="ir">Восторг / Радость</div>
+          <div class="ie">Rapture / Joy</div>
           <div class="ip">Pīti-bojjhaṅga</div>
         </div>
       </div>
@@ -635,6 +742,7 @@ body {
         <div class="in">5</div>
         <div>
           <div class="ir">Безмятежность / Спокойствие</div>
+          <div class="ie">Tranquility / Calm</div>
           <div class="ip">Passaddhi-bojjhaṅga</div>
         </div>
       </div>
@@ -642,6 +750,7 @@ body {
         <div class="in">6</div>
         <div>
           <div class="ir">Сосредоточение</div>
+          <div class="ie">Concentration</div>
           <div class="ip">Samādhi-bojjhaṅga</div>
         </div>
       </div>
@@ -649,15 +758,18 @@ body {
         <div class="in">7</div>
         <div>
           <div class="ir">Беспристрастность / Невозмутимость</div>
+          <div class="ie">Equanimity</div>
           <div class="ip">Upekkhā-bojjhaṅga</div>
         </div>
       </div>
   </div>
 </div>
+
     <div class="card c-sky">
   <div class="ch">
     <span class="cn">03</span>
     <div class="ct">5 Духовных Способностей</div>
+    <div class="ce">Five Mental Faculties</div>
     <div class="cp">Pañcindriya</div>
   </div>
   <div class="cb">
@@ -667,198 +779,526 @@ body {
     </div>
     <div class="fr"><div class="fn">1</div><div>
       <div class="ir">Вера / Доверие</div>
-      <div class="ip">Saddhā</div>
+      <div class="ie">Faith / Confidence</div><div class="ip">Saddhā</div>
     </div></div>
     <div class="fr"><div class="fn">2</div><div>
       <div class="ir">Ментальное усилие / Энергия</div>
-      <div class="ip">Viriya</div>
+      <div class="ie">Energy / Effort</div><div class="ip">Viriya</div>
     </div></div>
     <div class="fr fcore"><div class="fn">3</div><div>
-      <div class="ir" style="color:var(--gold);">Внимательное отмечание</div>
-      <div class="ip">Sati ★ стержень</div>
+      <div class="ir" style="color:var(--gold);">Внимательное осознавание / Бдительное восприятие</div>
+      <div class="ie">Mindfulness</div><div class="ip">Sati ★ стержень</div>
     </div></div>
     <div class="fr"><div class="fn">4</div><div>
       <div class="ir">Сосредоточение</div>
-      <div class="ip">Samādhi</div>
+      <div class="ie">Concentration</div><div class="ip">Samādhi</div>
     </div></div>
     <div class="fr"><div class="fn">5</div><div>
-      <div class="ir">Мудрость / Прозрение / Знание</div>
-      <div class="ip">Paññā</div>
+      <div class="ir">Мудрость / Прозрения / Знание (явлений)</div>
+      <div class="ie">Wisdom / Insight</div><div class="ip">Paññā</div>
     </div></div>
   </div>
 </div>
-  </div>
-  <div class="grid col2">
     <div class="card c-lav">
   <div class="ch">
     <span class="cn">04</span>
     <div class="ct">Благородный Восьмеричный Путь</div>
+    <div class="ce">Noble Eightfold Path</div>
     <div class="cp">Ariyo Aṭṭhaṅgiko Maggo</div>
   </div>
   <div class="cb">
-    <div class="gl">Paññā — Мудрость</div>
-    <div class="pi"><div class="pc pp">В</div><div>
+    <div class="gl">Paññā — Мудрость / Wisdom</div>
+    <div class="pi"><div class="pc pp">П</div><div>
       <div class="ir">1. Правильное воззрение</div>
-	  <div class="ip">Sammā-diṭṭhi</div>
+      <div class="ie">Right View</div><div class="ip">Sammā-diṭṭhi</div>
     </div></div>
     <div class="pi"><div class="pc pp">Н</div><div>
       <div class="ir">2. Правильное намерение</div>
-	  <div class="ip">Sammā-saṅkappa</div>
+      <div class="ie">Right Intention</div><div class="ip">Sammā-saṅkappa</div>
     </div></div>
-    <div class="gl">Sīla — Нравственность</div>
+    <div class="gl">Sīla — Нравственность / Virtue</div>
     <div class="pi"><div class="pc ps">Р</div><div>
       <div class="ir">3. Правильная речь</div>
-	  <div class="ip">Sammā-vācā</div>
+      <div class="ie">Right Speech</div><div class="ip">Sammā-vācā</div>
     </div></div>
     <div class="pi"><div class="pc ps">Д</div><div>
       <div class="ir">4. Правильное действие</div>
-	  <div class="ip">Sammā-kammanta</div>
+      <div class="ie">Right Action</div><div class="ip">Sammā-kammanta</div>
     </div></div>
     <div class="pi"><div class="pc ps">Ж</div><div>
       <div class="ir">5. Правильный образ жизни</div>
-	  <div class="ip">Sammā-ājīva</div>
+      <div class="ie">Right Livelihood</div><div class="ip">Sammā-ājīva</div>
     </div></div>
-    <div class="gl">Samādhi — Сосредоточение</div>
+    <div class="gl">Samādhi — Сосредоточение / Concentration</div>
     <div class="pi"><div class="pc pm">У</div><div>
       <div class="ir">6. Правильное усилие</div>
-	  <div class="ip">Sammā-vāyāma</div>
+      <div class="ie">Right Effort</div><div class="ip">Sammā-vāyāma</div>
     </div></div>
     <div class="pi"><div class="pc pm">О</div><div>
       <div class="ir">7. Правильное осознавание</div>
-	  <div class="ip">Sammā-sati</div>
+      <div class="ie">Right Mindfulness</div><div class="ip">Sammā-sati</div>
     </div></div>
     <div class="pi"><div class="pc pm">С</div><div>
       <div class="ir">8. Правильное сосредоточение</div>
-	  <div class="ip">Sammā-samādhi</div>
+      <div class="ie">Right Concentration</div><div class="ip">Sammā-samādhi</div>
     </div></div>
   </div>
 </div>
-    <div class="card c-amb">
-  <div class="ch">
-      <span class="cn">05</span>
-      <div class="ct">10 Искажений Прозрения</div>
-      <div class="cp">Dasa Vipassanūpakkilesā</div>
+  </div>
+  <div class="pfooter pfooter-pt">
+        <span>ВИПАССАНА · MAHĀSI SAYĀDAW TRADITION · THERAVĀDA</span>
+        <span>Стр. 2 из 7 · Помехи · Факторы · Способности · Путь</span>
+      </div>
+</div><div class="page-pt page-break">
+  <div class="hdr">
+      <div class="hdr-tag">Стр. 3 · СТАДИИ РАЗВИТИЯ ПРОЗРЕНИЯ</div>
+      <div class="hdr-title">Прогресс Прозрения</div>
     </div>
-  <div class="cb">
-    <div style="font-size:7pt;color:var(--text-soft);font-style:italic;margin-bottom:6px;
-         border-left:2px solid var(--amb-bd);padding-left:4px;">
-      Возникают между ñāṇa 3 (Самасана) и ñāṇa 4 (Уддаябхая).<br>Могут приниматься за достижения — это ловушка практики.<br>Признаки прогресса в практике становятся препятствиями при возникновении
-      стремления (цепляния) к тонкому удовольствию от них.
-    </div>
-    <div class="item">
-        <div class="in">1</div>
-        <div>
-          <div class="ir">Свет</div>
-          <div class="ip">Obhāsa</div>
-        </div>
-      </div>
-    <div class="item">
-        <div class="in">2</div>
-        <div>
-          <div class="ir">Восторг / Экстаз</div>
-          <div class="ip">Pīti</div>
-        </div>
-      </div>
-    <div class="item">
-        <div class="in">3</div>
-        <div>
-          <div class="ir">Безмятежность / Спокойствие</div>
-          <div class="ip">Passaddhi</div>
-        </div>
-      </div>
-    <div class="item">
-        <div class="in">4</div>
-        <div>
-          <div class="ir">Решительность / Твёрдость</div>
-          <div class="ip">Adhimokkha</div>
-        </div>
-      </div>
-    <div class="item">
-        <div class="in">5</div>
-        <div>
-          <div class="ir">Напряжённое усилие</div>
-          <div class="ip">Paggaha</div>
-        </div>
-      </div>
-    <div class="item">
-        <div class="in">6</div>
-        <div>
-          <div class="ir">Счастье / Блаженство</div>
-          <div class="ip">Sukha</div>
-        </div>
-      </div>
-    <div class="item">
-        <div class="in">7</div>
-        <div>
-          <div class="ir">Знание / Ведение</div>
-          <div class="ip">Ñāṇa</div>
-        </div>
-      </div>
-    <div class="item">
-        <div class="in">8</div>
-        <div>
-          <div class="ir">Внимательное осознавание</div>
-          <div class="ip">Upaṭṭhāna</div>
-        </div>
-      </div>
-    <div class="item">
-        <div class="in">9</div>
-        <div>
-          <div class="ir">Беспристрастность / Невозмутимость</div>
-          <div class="ip">Upekkhā</div>
-        </div>
-      </div>
-    <div class="item">
-        <div class="in">10</div>
-        <div>
-          <div class="ir">Тонкое желание к опыту / Привязанность к надмирским состояниям</div>
-          <div class="ip">Nikanti</div>
-        </div>
-      </div>
+	        <span class="cn">05</span>
+  <div class="poi-wrap">
 
-  </div>
-</div>
-  </div>
+      <div><div class="poi-p pp1">
+      <div class="poi-p-badge">P1</div>
+      <div class="poi-p-body">
+        <div class="poi-p-ru">Очищение нравственности</div>
+        <div class="poi-p-en">Purification of Conduct</div>
+        <div class="poi-p-pa">sīlavisuddhi</div>
+      </div>
+    </div><div class="poi-p pp2">
+      <div class="poi-p-badge">P2</div>
+      <div class="poi-p-body">
+        <div class="poi-p-ru">Очищение ума</div>
+        <div class="poi-p-en">Purification of Mind</div>
+        <div class="poi-p-pa">cittavisuddhi</div>
+      </div>
+    </div><div class="poi-p pp3">
+      <div class="poi-p-badge">P3</div>
+      <div class="poi-p-body">
+        <div class="poi-p-ru">Очищение воззрений</div>
+        <div class="poi-p-en">Purification of View</div>
+        <div class="poi-p-pa">diṭṭhivisuddhi</div>
+      </div>
+    </div><div class="poi-k">
+      <div class="poi-k-badge">K1</div>
+      <div class="poi-k-body">
+        <div class="poi-k-ru">Знание прозрения в различение ума и материи</div>
+        <div class="poi-k-en">Knowledge that Discerns Mental and Physical Phenomena</div>
+        <div class="poi-k-pa">nāmarūpaparicchedañāṇa</div>
+      </div>
+    </div><div class="poi-p pp4">
+      <div class="poi-p-badge">P4</div>
+      <div class="poi-p-body">
+        <div class="poi-p-ru">Очищение путём преодоления сомнений</div>
+        <div class="poi-p-en">Purification by Overcoming Doubt</div>
+        <div class="poi-p-pa">kaṅkhāvitaraṇavisuddhi</div>
+      </div>
+    </div><div class="poi-k">
+      <div class="poi-k-badge">K2</div>
+      <div class="poi-k-body">
+        <div class="poi-k-ru">Знание прозрения в причинно-следственные связи</div>
+        <div class="poi-k-en">Knowledge that Discerns Conditionality</div>
+        <div class="poi-k-pa">paccayapariggahañāṇa</div>
+      </div>
+    </div><div class="poi-k">
+      <div class="poi-k-badge">K3</div>
+      <div class="poi-k-body">
+        <div class="poi-k-ru">Знание прозрения путём постижения / понимания</div>
+        <div class="poi-k-en">Insight Knowledge by Comprehension</div>
+        <div class="poi-k-pa">sammasanañāṇa</div>
+      </div>
+    </div><div class="poi-k">
+      <div class="poi-k-badge">K4</div>
+      <div class="poi-k-body">
+        <div class="poi-k-ru">Знание прозрения возникновения и исчезновения (незрелое)</div>
+        <div class="poi-k-en">Insight Knowledge of Arising and Passing Away (immature)</div>
+        <div class="poi-k-pa">udayabbayañāṇa</div>
+      </div>
+    </div><div class="poi-c-wrap">
+      <div class="poi-c-hdr">C · 10 Искажений Прозрения
+        <span class="poi-c-hdr-note">vipassanūpakkilesā · Признаки прогресса в практике становятся препятствиями при возникновении стремления (цепляния) к тонкому удовольствию от них</span>
+      </div>
+      <div class="poi-c-grid"><div class="poi-c-item">
+        <div class="poi-c-n">c1</div>
+        <div class="poi-c-ru">Блистающий свет</div>
+        <div class="poi-c-en">Brilliant Light</div>
+        <div class="poi-c-pa">(obhāsa)</div>
+      </div><div class="poi-c-item">
+        <div class="poi-c-n">c2</div>
+        <div class="poi-c-ru">Восторг</div>
+        <div class="poi-c-en">Rapture</div>
+        <div class="poi-c-pa">(pīti)</div>
+      </div><div class="poi-c-item">
+        <div class="poi-c-n">c3</div>
+        <div class="poi-c-ru">Спокойствие / Безмятежность</div>
+        <div class="poi-c-en">Tranquility</div>
+        <div class="poi-c-pa">(passaddhi)</div>
+      </div><div class="poi-c-item">
+        <div class="poi-c-n">c4</div>
+        <div class="poi-c-ru">Решимость</div>
+        <div class="poi-c-en">Resolution</div>
+        <div class="poi-c-pa">(adhimokkha)</div>
+      </div><div class="poi-c-item">
+        <div class="poi-c-n">c5</div>
+        <div class="poi-c-ru">Ментальное усилие</div>
+        <div class="poi-c-en">Energy</div>
+        <div class="poi-c-pa">(paggaha)</div>
+      </div><div class="poi-c-item">
+        <div class="poi-c-n">c6</div>
+        <div class="poi-c-ru">Счастье / Блаженство</div>
+        <div class="poi-c-en">Happiness</div>
+        <div class="poi-c-pa">(sukha)</div>
+      </div><div class="poi-c-item">
+        <div class="poi-c-n">c7</div>
+        <div class="poi-c-ru">Знание прозрения</div>
+        <div class="poi-c-en">Knowledge</div>
+        <div class="poi-c-pa">(ñāṇa)</div>
+      </div><div class="poi-c-item">
+        <div class="poi-c-n">c8</div>
+        <div class="poi-c-ru">Внимательное осознавание</div>
+        <div class="poi-c-en">Mindfulness</div>
+        <div class="poi-c-pa">(sati)</div>
+      </div><div class="poi-c-item">
+        <div class="poi-c-n">c9</div>
+        <div class="poi-c-ru">Беспристрастность</div>
+        <div class="poi-c-en">Equanimity</div>
+        <div class="poi-c-pa">(upekkhā)</div>
+      </div><div class="poi-c-item">
+        <div class="poi-c-n">c10</div>
+        <div class="poi-c-ru">Восхищение / Цепляние</div>
+        <div class="poi-c-en">Delight</div>
+        <div class="poi-c-pa">(nikanti)</div>
+      </div></div>
+    </div><div class="poi-p pp5">
+      <div class="poi-p-badge">P5</div>
+      <div class="poi-p-body">
+        <div class="poi-p-ru">Очищение знанием и видением того, что является путём и что не является путём</div>
+        <div class="poi-p-en">Purification by Knowledge and Vision of What Is Path and Not Path</div>
+        <div class="poi-p-pa">maggāmaggañāṇadassanavisuddhi</div>
+      </div>
+    </div></div>
+      <div><div class="poi-p pp6">
+      <div class="poi-p-badge">P6</div>
+      <div class="poi-p-body">
+        <div class="poi-p-ru">Очищение знанием и видением пути (включает зрелое Знание прозрения возникновения и исчезновения)</div>
+        <div class="poi-p-en">Purification by Knowledge and Vision of the Way (includes Mature Arising and Passing Away)</div>
+        <div class="poi-p-pa">paṭipadāñāṇadassanavisuddhi</div>
+      </div>
+    </div>
+	<div class="poi-k">
+      <div class="poi-k-badge">K5</div>
+      <div class="poi-k-body">
+        <div class="poi-k-ru">Знание прозрения растворения / распада</div>
+ <!--         <div class="poi-k-en">Insight Knowledge of Dissolution</div> -->
+        <div class="poi-k-pa">bhaṅgañāṇa</div>
+      </div>
+    </div><div class="poi-k">
+      <div class="poi-k-badge">K6</div>
+      <div class="poi-k-body">
+        <div class="poi-k-ru">Знание прозрения страха</div>
+ <!--         <div class="poi-k-en">Insight Knowledge of Fear</div> -->
+        <div class="poi-k-pa">bhayañāṇa</div>
+      </div>
+    </div><div class="poi-k">
+      <div class="poi-k-badge">K7</div>
+      <div class="poi-k-body">
+        <div class="poi-k-ru">Знание прозрения опасности</div>
+ <!--         <div class="poi-k-en">Insight Knowledge of Danger</div> -->
+        <div class="poi-k-pa">ādīnavañāṇa</div>
+      </div>
+    </div><div class="poi-k">
+      <div class="poi-k-badge">K8</div>
+      <div class="poi-k-body">
+        <div class="poi-k-ru">Знание прозрения разочарования / угасания интереса</div>
+ <!--         <div class="poi-k-en">Insight Knowledge of Disenchantment</div> -->
+        <div class="poi-k-pa">nibbidāñāṇa</div>
+      </div>
+    </div><div class="poi-k">
+      <div class="poi-k-badge">K9</div>
+      <div class="poi-k-body">
+        <div class="poi-k-ru">Знание прозрения желания освобождения</div>
+ <!--         <div class="poi-k-en">Insight Knowledge of Desire for Deliverance</div> -->
+        <div class="poi-k-pa">muñcitukamyatāñāṇa</div>
+      </div>
+    </div><div class="poi-k">
+      <div class="poi-k-badge">K10</div>
+      <div class="poi-k-body">
+        <div class="poi-k-ru">Знание прозрения повторного наблюдения</div>
+ <!--         <div class="poi-k-en">Insight Knowledge Derived from Reobserving</div> -->
+        <div class="poi-k-pa">paṭisaṅkhāñāṇa</div>
+      </div>
+    </div><div class="poi-k">
+      <div class="poi-k-badge">K11</div>
+      <div class="poi-k-body">
+        <div class="poi-k-ru">Знание прозрения беспристрастности к явлениям</div>
+ <!--         <div class="poi-k-en">Insight Knowledge of Equanimity toward Phenomena</div> -->
+        <div class="poi-k-pa">saṅkhārupekkhāñāṇa</div>
+      </div>
+    </div>
+	<div class="poi-k">
+      <div class="poi-k-badge">K12</div>
+      <div class="poi-k-body">
+        <div class="poi-k-ru">Знание прозрения, ведущее к освобождению</div>
+ <!--         <div class="poi-k-en">Insight Knowledge Leading to Emergence</div> -->
+        <div class="poi-k-pa">vutthānagāminīñāṇa</div>
+      </div>
+    </div><div class="poi-k">
+      <div class="poi-k-badge">K13</div>
+      <div class="poi-k-body">
+        <div class="poi-k-ru">Знание прозрения соответствия / адаптации (готовности ума к смене линии)</div>
+ <!--         <div class="poi-k-en">Insight Knowledge of Adaptation</div> -->
+        <div class="poi-k-pa">anulomañāṇa</div>
+      </div>
+    </div><div class="poi-k">
+      <div class="poi-k-badge">K14</div>
+      <div class="poi-k-body">
+        <div class="poi-k-ru">Знание смены рода (смены линии) / Знание перехода к благородному состоянию (постоянное безусильное осознавание)</div>
+ <!--         <div class="poi-k-en">Knowledge of Change of Lineage</div> -->
+        <div class="poi-k-pa">gotrabhūñāṇa</div>
+      </div>
+    </div>
+	<div class="poi-p pp7">
+      <div class="poi-p-badge">P7</div>
+      <div class="poi-p-body">
+        <div class="poi-p-ru">Очищение знанием и видением</div>
+ <!--         <div class="poi-p-en">Purification by Knowledge and Vision</div> -->
+        <div class="poi-p-pa">ñāṇadassanavisuddhi</div>
+      </div>
+	   </div>
+ 	<div class="poi-k">
+      <div class="poi-k-badge">K15</div>
+      <div class="poi-k-body">
+        <div class="poi-k-ru">Знание Пути</div>
+ <!--         <div class="poi-k-en">Knowledge of the Path</div> -->
+        <div class="poi-k-pa">maggañāṇa</div>
+      </div>
+    </div>
+	<div class="poi-k">
+      <div class="poi-k-badge">K16</div>
+      <div class="poi-k-body">
+        <div class="poi-k-ru">Знание Плода</div>
+ <!--         <div class="poi-k-en">Knowledge of the Fruit</div> -->
+        <div class="poi-k-pa">phalañāṇa</div>
+      </div>
+    </div><div class="poi-k">
+      <div class="poi-k-badge">K17</div>
+      <div class="poi-k-body">
+        <div class="poi-k-ru">Знание уничтоженных и оставшихся килес</div>
+ <!--         <div class="poi-k-en">Knowledge of Reviewing</div> -->
+        <div class="poi-k-pa">paccavekkhaṇañāṇa</div>
+      </div>
+    </div><div class="poi-k">
+      <div class="poi-k-badge">K18</div>
+      <div class="poi-k-body">
+        <div class="poi-k-ru">Достижение плода / Вхождение в плод / Способность намеренно входить и пребывать в состоянии плода</div>
+<!--          <div class="poi-k-en">Attainment of Fruition</div> -->
+        <div class="poi-k-pa">phalasamāpatti</div>
+      </div>
+    </div></div>
+    </div>
   <div class="pfooter">
         <span>ВИПАССАНА · MAHĀSI SAYĀDAW TRADITION · THERAVĀDA</span>
-        <span>Стр. 2 из 4 · Помехи · Факторы · Способности · Путь · Искажения</span>
+        <span>Стр. 3 из 7 · Progress of Insight · P1–P7 · K1–K18 · 10 Corruptions</span>
       </div>
-</div><div class="page page-break page-landscape">
-  <div class="hdr" style="text-align:left;margin-bottom:8px;padding-bottom:6px;">
-    <div class="hdr-tag">Стр. 3 · Медитативные погружения</div>
-    <div class="hdr-title" style="font-size:14pt;">06 · Джхановые факторы — Материальные и Нематериальные Джханы</div>
-  </div>
+</div><div class="page-pt page-break">
+  <div class="hdr">
+      <div class="hdr-tag">Стр. 4 · 18 ВЕЛИКИХ ЗНАНИЙ НА ОСНОВЕ 18 СОЗЕРЦАНИЙ</div>
+      <div class="hdr-title">18 Великих Знаний Прозрения</div>
+    </div>
+    <span class="cn">06 </span>
+
+  <div class="gik-wrap"><div>
+      <div class="gik-section-hdr">Семь главных созерцаний
+      </div>
+      <div class="gik-item">
+      <div class="gik-n">1</div>
+      <div class="gik-body">
+        <div class="gik-ru">Созерцание непостоянства</div>
+        <div class="gik-en">Contemplation of Impermanence</div>
+        <div class="gik-pa">(aniccānupassanā)</div>
+        <div class="gik-comment">Оставляет восприятие постоянства — практикуя созерцание непостоянства</div>
+      </div>
+    </div><div class="gik-item">
+      <div class="gik-n">2</div>
+      <div class="gik-body">
+        <div class="gik-ru">Созерцание неудовлетворительности</div>
+        <div class="gik-en">Contemplation of Unsatisfactoriness</div>
+        <div class="gik-pa">(dukkhānupassanā)</div>
+        <div class="gik-comment">Оставляет восприятие удовлетворения — практикуя созерцание неудовлетворительности</div>
+      </div>
+    </div><div class="gik-item">
+      <div class="gik-n">3</div>
+      <div class="gik-body">
+        <div class="gik-ru">Созерцание не-я</div>
+        <div class="gik-en">Contemplation of Not-Self</div>
+        <div class="gik-pa">(anattānupassanā)</div>
+        <div class="gik-comment">Оставляет восприятие самости — практикуя созерцание не-я</div>
+      </div>
+    </div><div class="gik-item">
+      <div class="gik-n">4</div>
+      <div class="gik-body">
+        <div class="gik-ru">Созерцание разочарования</div>
+        <div class="gik-en">Contemplation of Disenchantment</div>
+        <div class="gik-pa">(nibbidānupassanā)</div>
+        <div class="gik-comment">Оставляет восхищение / восторг — практикуя созерцание разочарования</div>
+      </div>
+    </div><div class="gik-item">
+      <div class="gik-n">5</div>
+      <div class="gik-body">
+        <div class="gik-ru">Созерцание бесстрастия</div>
+        <div class="gik-en">Contemplation of Dispassion</div>
+        <div class="gik-pa">(virāgānupassanā)</div>
+        <div class="gik-comment">Оставляет страсть / влечение — практикуя созерцание бесстрастия</div>
+      </div>
+    </div><div class="gik-item">
+      <div class="gik-n">6</div>
+      <div class="gik-body">
+        <div class="gik-ru">Созерцание прекращения</div>
+        <div class="gik-en">Contemplation of Cessation</div>
+        <div class="gik-pa">(nirodhānupassanā)</div>
+        <div class="gik-comment">Оставляет возникновение — практикуя созерцание прекращения</div>
+      </div>
+    </div><div class="gik-item">
+      <div class="gik-n">7</div>
+      <div class="gik-body">
+        <div class="gik-ru">Созерцание отпускания</div>
+        <div class="gik-en">Contemplation of Relinquishment</div>
+        <div class="gik-pa">(paṭinissaggānupassanā)</div>
+        <div class="gik-comment">Оставляет цепляние — практикуя созерцание отпускания</div>
+      </div>
+    </div>
+    </div><div>
+      <div class="gik-section-hdr">Остальные созерцания
+      </div>
+      <div class="gik-item">
+      <div class="gik-n">8</div>
+      <div class="gik-body">
+        <div class="gik-ru">Созерцание разрушения (как процесса)</div>
+ <!--       <div class="gik-en">Contemplation of Destruction</div> -->
+        <div class="gik-pa">(khayānupassanā)</div>
+        <div class="gik-comment">Оставляет восприятие плотности / цельности — практикуя созерцание разрушения</div>
+      </div>
+    </div><div class="gik-item">
+      <div class="gik-n">9</div>
+      <div class="gik-body">
+        <div class="gik-ru">Созерцание исчезновения (несоздавания)</div>
+<!--        <div class="gik-en">Contemplation of Fall</div> -->
+        <div class="gik-pa">(vayānupassanā)</div>
+        <div class="gik-comment">Оставляет накопление кармы — практикуя созерцание исчезновения</div>
+      </div>
+    </div><div class="gik-item">
+      <div class="gik-n">10</div>
+      <div class="gik-body">
+        <div class="gik-ru">Созерцание изменения</div>
+ <!--       <div class="gik-en">Contemplation of Change</div> -->
+        <div class="gik-pa">(vipariṇāmānupassanā)</div>
+        <div class="gik-comment">Оставляет восприятие стабильности — практикуя созерцание изменения</div>
+      </div>
+    </div><div class="gik-item">
+      <div class="gik-n">11</div>
+      <div class="gik-body">
+        <div class="gik-ru">Созерцание отсутствия признаков</div>
+<!--        <div class="gik-en">Contemplation of the Signless</div> -->
+        <div class="gik-pa">(animittānupassanā)</div>
+        <div class="gik-comment">Оставляет признаки — практикуя созерцание отсутствия признаков</div>
+      </div>
+    </div><div class="gik-item">
+      <div class="gik-n">12</div>
+      <div class="gik-body">
+        <div class="gik-ru">Созерцание нежелаемого / незванного</div>
+<!--        <div class="gik-en">Contemplation of the Desireless</div> -->
+        <div class="gik-pa">(appaṇihitānupassanā)</div>
+        <div class="gik-comment">Оставляет желание (тягу к)— практикуя созерцание нежелаемого</div>
+      </div>
+    </div><div class="gik-item">
+      <div class="gik-n">13</div>
+      <div class="gik-body">
+        <div class="gik-ru">Созерцание пустоты</div>
+ <!--       <div class="gik-en">Contemplation of Emptiness</div> -->
+        <div class="gik-pa">(suññatānupassanā)</div>
+        <div class="gik-comment">Оставляет привязанность — практикуя созерцание пустоты</div>
+      </div>
+    </div><div class="gik-item">
+      <div class="gik-n">14</div>
+      <div class="gik-body">
+        <div class="gik-ru">Прозрение в явления как высшая мудрость</div>
+ <!--       <div class="gik-en">Insight into Phenomena that Is Higher Wisdom</div> -->
+        <div class="gik-pa">(adhipaññādhammavipassanā)</div>
+        <div class="gik-comment">Оставляет цепляние за субстанцию — через прозрение в явления как высшую мудрость</div>
+      </div>
+    </div><div class="gik-item">
+      <div class="gik-n">15</div>
+      <div class="gik-body">
+        <div class="gik-ru">Знание и видение вещей как они есть</div>
+ <!--       <div class="gik-en">Knowledge and Vision of Things as They Really Are</div> -->
+        <div class="gik-pa">(yathābhūtañāṇadassana)</div>
+        <div class="gik-comment">Оставляет приверженность заблуждению — через знание и видение вещей как они есть</div>
+      </div>
+    </div><div class="gik-item">
+      <div class="gik-n">16</div>
+      <div class="gik-body">
+        <div class="gik-ru">Созерцание опасности / недостатков</div>
+ <!--       <div class="gik-en">Contemplation of Danger</div>  -->
+        <div class="gik-pa">(ādīnavānupassanā)</div>
+        <div class="gik-comment">Оставляет цепляние / опору на феномены — практикуя созерцание их опасности (как причин возникновения кармы, Dukkha etc)</div>
+      </div>
+    </div><div class="gik-item">
+      <div class="gik-n">17</div>
+      <div class="gik-body">
+        <div class="gik-ru">Созерцание мудрого рассмотрения</div>
+ <!--       <div class="gik-en">Contemplation of Reflection</div> -->
+        <div class="gik-pa">(paṭisaṅkhānupassanā)</div>
+        <div class="gik-comment">Оставляет немудрое восприятие — практикуя созерцание мудрого рассмотрения (осознавание)</div>
+      </div>
+    </div><div class="gik-item">
+      <div class="gik-n">18</div>
+      <div class="gik-body">
+        <div class="gik-ru">Созерцание отстранения / отворачивания (ума от объектов)</div>
+ <!--       <div class="gik-en">Contemplation of Turning Away</div> -->
+        <div class="gik-pa">(vivattānupassanā)</div>
+        <div class="gik-comment">Оставляет цепляние, привычки — практикуя созерцание отстранения (ума от обусловленного)</div>
+      </div>
+    </div>
+    </div></div>
+  <div class="pfooter">
+        <span>ВИПАССАНА · MAHĀSI SAYĀDAW TRADITION · THERAVĀDA</span>
+        <span>Стр. 4 из 7 · 18 Великих Знаний Прозрения · Great Insight Knowledges</span>
+      </div>
+</div><div class="page-ls page-break">
+  <div class="hdr">
+      
+      <div class="hdr-tag">Стр. 5 · Медитативные погружения</div>
+      <div class="hdr-title">Джхановые факторы</div>
+      <div class="hdr-pali">Факторы Материальных и Нематериальных Джхан · Rūpa-jhāna · Arūpāyatanāni</div>
+    </div>
   <div class="card" style="background:var(--card-bg2);">
   <div class="ch">
-    <span class="cn">06 · Джхановые факторы</span>
+    <span class="cn">07 · Джхановые факторы</span>
     <div class="ct">Факторы Материальных и Нематериальных Джхан</div>
     <div class="ce">Jhāna Factors: Fine-Material (Rūpa-jhāna) &amp; Immaterial (Arūpa-jhāna)</div>
   </div>
   <div class="cb">
-    <div class="jnote">
-      <strong>Метод Махаси Саядо:</strong> Акцент на суккха-випассака — путь чистого прозрения без предварительного достижения мирских джхан.
-      Нематериальные сферы строятся на Беспристрастности / Невозмутимости (upekkhā) и Однонаправленности ума (ekaggatā) 4-й джханы — джхановые факторы как таковые не перечисляются; отображается доминирующий объект.
-    </div>
+    <div class="jnote"><strong>Метод Махаси Саядо:</strong> Акцент на суккха-випассака — путь чистого прозрения без предварительного достижения мирских джхан.
+      Нематериальные сферы строятся на Беспристрастности / Невозмутимости (upekkhā) и Однонаправленности ума (ekaggatā) 4-й джханы — джхановые факторы как таковые не перечисляются; отображается доминирующий объект.</div>
     <div class="legend">
-      <div class="li"><span class="ld ld-p"></span> Присутствует / Present</div>
-      <div class="li"><span class="ld ld-c"></span> Груб → фактор становится грубым в процессе развития джханы и устраняется при переходе в следующую джхану</div>
-      <div class="li"><span class="ld ld-a"></span> Отсутствует / Absent</div>
+      <div class="li"><span class="ld ld-p"></span> Присутствует</div>
+      <div class="li"><span class="ld ld-c"></span> Груб → фактор становится грубым и устраняется при переходе в следующую джхану</div>
+      <div class="li"><span class="ld ld-a"></span> Отсутствует</div>
     </div>
     <div style="overflow-x:auto;"><table class="jt">
   <thead>
   <tr>
     <th rowspan="2" style="text-align:left;min-width:130px;">Джхана · Jhāna</th>
-    <th colspan="2">Первичный контакт<br><span style="font-weight:400;font-style:italic;font-size:6.5pt;">Applied thought<br>Vitakka</span></th>
-    <th colspan="2">Устойчивое исследование<br><span style="font-weight:400;font-style:italic;font-size:6.5pt;">Sustained thought<br>Vicāra</span></th>
-    <th colspan="2">Радость / Восторг<br><span style="font-weight:400;font-style:italic;font-size:6.5pt;">Rapture<br>Pīti</span></th>
-    <th colspan="2">Удовольствие / Удовлетворенность<br><span style="font-weight:400;font-style:italic;font-size:6.5pt;">Pleasure / Joy<br>Sukha</span></th>
-    <th colspan="2">Однонаправленность (ума)<br><span style="font-weight:400;font-style:italic;font-size:6.5pt;">One-pointedness<br>Ekaggatā</span></th>
+    <th colspan="2">Первичный контакт<br><span style="font-weight:400;font-style:italic;font-size:6.5pt;">Applied thought · Vitakka</span></th>
+    <th colspan="2">Устойчивое исследование<br><span style="font-weight:400;font-style:italic;font-size:6.5pt;">Sustained thought · Vicāra</span></th>
+    <th colspan="2">Радость / Восторг<br><span style="font-weight:400;font-style:italic;font-size:6.5pt;">Rapture · Pīti</span></th>
+    <th colspan="2">Удовольствие / Удовлетворённость<br><span style="font-weight:400;font-style:italic;font-size:6.5pt;">Pleasure / Joy · Sukha</span></th>
+    <th colspan="2">Однонаправленность (ума)<br><span style="font-weight:400;font-style:italic;font-size:6.5pt;">One-pointedness · Ekaggatā</span></th>
   </tr>
   <tr>
-    <th style="font-size:6.5pt;">●</th><th style="font-size:6.5pt;">груб.</th>
-    <th style="font-size:6.5pt;">●</th><th style="font-size:6.5pt;">груб.</th>
-    <th style="font-size:6.5pt;">●</th><th style="font-size:6.5pt;">груб.</th>
-    <th style="font-size:6.5pt;">●</th><th style="font-size:6.5pt;">груб.</th>
+    <th style="font-size:6.5pt;">●</th><th style="font-size:6.5pt;">груб.<br>coarse</th>
+    <th style="font-size:6.5pt;">●</th><th style="font-size:6.5pt;">груб.<br>coarse</th>
+    <th style="font-size:6.5pt;">●</th><th style="font-size:6.5pt;">груб.<br>coarse</th>
+    <th style="font-size:6.5pt;">●</th><th style="font-size:6.5pt;">груб.<br>coarse</th>
     <th style="font-size:6.5pt;">●</th><th style="font-size:6.5pt;">—</th>
   </tr>
 </thead>
@@ -875,7 +1315,7 @@ body {
         <td class="tc"><span class="fa">—</span></td><td></td><td class="tc"><span class="fa">—</span></td><td></td><td class="tc"><span class="fp">●</span></td><td class="tc"><span class="fc">●</span><span class="cno">→ след.</span></td><td class="tc"><span class="fp">●</span></td><td></td><td class="tc"><span class="fp">●</span></td><td></td>
       </tr>
     <tr>
-        <td><span class="jl">3-я Материальная<br></span>
+        <td><span class="jl">3-я Материальная<br>></span>
         <span class="jp">Tatiya-jhāna</span></td>
         <td class="tc"><span class="fa">—</span></td><td></td><td class="tc"><span class="fa">—</span></td><td></td><td class="tc"><span class="fa">—</span></td><td></td><td class="tc"><span class="fp">●</span></td><td class="tc"><span class="fc">●</span><span class="cno">→ след.</span></td><td class="tc"><span class="fp">●</span></td><td></td>
       </tr>
@@ -884,14 +1324,13 @@ body {
         <span class="jp">Catuttha-jhāna</span></td>
         <td class="tc"><span class="fa">—</span></td><td></td><td class="tc"><span class="fa">—</span></td><td></td><td class="tc"><span class="fa">—</span></td><td></td><td class="tc"><span class="fup">Upekkhā</span></td><td></td><td class="tc"><span class="fp">●</span></td><td></td>
       </tr>
-    <tr class="sec-row sec-arupa"><td colspan="11">НЕМАТЕРИАЛЬНЫЕ · ARŪPA-JHĀNA · &nbsp;·&nbsp; <span style="font-weight:400;">(Основа: Беспристрастность / Невозмутимость и Однонаправленность, Upekkhā + Ekaggatā 4-й jhāna; отображается доминирующий объект каждой сферы)</span></td></tr>
+    <tr class="sec-row sec-arupa"><td colspan="11">НЕМАТЕРИАЛЬНЫЕ · ARŪPA-JHĀNA · Four Immaterial Jhānas / Formless Attainments — Cattāri Arūpa-jjhānāni &nbsp;·&nbsp; <span style="font-weight:400;">(Основа: Беспристрастность / Невозмутимость + Однонаправленность 4-й jhāna; отображается доминирующий объект каждой сферы)</span></td></tr>
     <tr class="ar-row">
         <td><span class="ar-sp">5. Сфера безграничного пространства</span><br>
           <span class="ar-pa">Ākāsānañcāyatana</span><br>
           <span class="ar-en">Base of Infinite Space</span></td>
         <td colspan="10">
-          <span style="font-family:'Poppins',sans-serif;font-size:6pt;letter-spacing:1px;
-                text-transform:uppercase;color:var(--jade-hd);">Доминирующий объект наблюдения / Dominant object:</span><br>
+          <span style="font-family:'Poppins',sans-serif;font-size:6pt;letter-spacing:1px;text-transform:uppercase;color:var(--jade-hd);">Доминирующий объект наблюдения / Dominant object:</span><br>
           <span class="ar-obj">Безграничное пространство</span>
           <span class="ar-od"> · Infinite space perception · <em>Ākāsa-ānañcā</em></span><br>
           <span style="font-size:6.5pt;color:var(--text-dim);">Основа: Upekkhā + Ekaggatā 4-й джханы · Base: equanimity &amp; one-pointedness of 4th jhāna</span>
@@ -902,8 +1341,7 @@ body {
           <span class="ar-pa">Viññāṇañcāyatana</span><br>
           <span class="ar-en">Base of Infinite Consciousness</span></td>
         <td colspan="10">
-          <span style="font-family:'Poppins',sans-serif;font-size:6pt;letter-spacing:1px;
-                text-transform:uppercase;color:var(--jade-hd);">Доминирующий объект наблюдения / Dominant object:</span><br>
+          <span style="font-family:'Poppins',sans-serif;font-size:6pt;letter-spacing:1px;text-transform:uppercase;color:var(--jade-hd);">Доминирующий объект наблюдения / Dominant object:</span><br>
           <span class="ar-obj">Безграничное сознание</span>
           <span class="ar-od"> · Infinite consciousness perception · <em>Viññāṇa-ānañcā</em></span><br>
           <span style="font-size:6.5pt;color:var(--text-dim);">Основа: Upekkhā + Ekaggatā 4-й джханы · Base: equanimity &amp; one-pointedness of 4th jhāna</span>
@@ -914,8 +1352,7 @@ body {
           <span class="ar-pa">Ākiñcaññāyatana</span><br>
           <span class="ar-en">Base of Nothingness</span></td>
         <td colspan="10">
-          <span style="font-family:'Poppins',sans-serif;font-size:6pt;letter-spacing:1px;
-                text-transform:uppercase;color:var(--jade-hd);">Доминирующий объект наблюдения / Dominant object:</span><br>
+          <span style="font-family:'Poppins',sans-serif;font-size:6pt;letter-spacing:1px;text-transform:uppercase;color:var(--jade-hd);">Доминирующий объект наблюдения / Dominant object:</span><br>
           <span class="ar-obj">Переживание «ничто»</span>
           <span class="ar-od"> · Perception of nothingness · <em>Natthi-kiñci</em></span><br>
           <span style="font-size:6.5pt;color:var(--text-dim);">Основа: Upekkhā + Ekaggatā 4-й джханы · Base: equanimity &amp; one-pointedness of 4th jhāna</span>
@@ -926,8 +1363,7 @@ body {
           <span class="ar-pa">Nevasaññānāsaññāyatana</span><br>
           <span class="ar-en">Neither-Perception-nor-Non-Perception</span></td>
         <td colspan="10">
-          <span style="font-family:'Poppins',sans-serif;font-size:6pt;letter-spacing:1px;
-                text-transform:uppercase;color:var(--jade-hd);">Доминирующий объект наблюдения / Dominant object:</span><br>
+          <span style="font-family:'Poppins',sans-serif;font-size:6pt;letter-spacing:1px;text-transform:uppercase;color:var(--jade-hd);">Доминирующий объект наблюдения / Dominant object:</span><br>
           <span class="ar-obj">Предельно утончённое восприятие</span>
           <span class="ar-od"> · Ultra-refined residual perception · <em>N'eva-saññā n'āsaññā</em></span><br>
           <span style="font-size:6.5pt;color:var(--text-dim);">Основа: Upekkhā + Ekaggatā 4-й джханы · Base: equanimity &amp; one-pointedness of 4th jhāna</span>
@@ -939,18 +1375,18 @@ body {
 </div>
   <div class="pfooter">
         <span>ВИПАССАНА · MAHĀSI SAYĀDAW TRADITION · THERAVĀDA</span>
-        <span>Стр. 3 из 5 · Jhāna Factors — Rūpa-jhāna · Arūpāyatanāni</span>
+        <span>Стр. 5 из 7 · Jhāna Factors — Rūpa-jhāna · Arūpāyatanāni</span>
       </div>
-</div><div class="page page-break">
-  <div class="hdr" style="text-align:left;margin-bottom:8px;padding-bottom:6px;">
-    <div class="hdr-tag">Стр. 4 · Стадии Пробуждения · Очищения</div>
-    <div class="hdr-title" style="font-size:14pt;">07–08 · Четыре Благородных Личности · Семь Очищений</div>
-  </div>
-  <div class="sdiv">Четыре Арийапуггала · Cattāro Ariyapuggalā · Семь Висуддхи · Satta Visuddhi</div>
-  <div class="grid col21">
-    <div class="card c-teal">
+</div><div class="page-ls page-break">
+  <div class="hdr">
+      
+      <div class="hdr-tag">Стр. 6 · Стадии Пробуждения</div>
+      <div class="hdr-title">Четыре Стадии Пробуждения</div>
+      <div class="hdr-pali">Четыре Арийапуггала · Cattāro Ariyapuggalā</div>
+    </div>
+  <div class="card c-teal">
   <div class="ch">
-      <span class="cn">07</span>
+      <span class="cn">08 </span>
       <div class="ct">4 Стадии Пробуждения</div>
       <div class="ce">Four Stages of Awakening — Fetters</div>
       <div class="cp">Cattāro Ariyapuggalā</div>
@@ -963,13 +1399,13 @@ body {
       <div class="ftg-lbl">Низшие 5 / Lower</div>
       <div class="ftg-items">1. Взгляды на «я» · Sakkāyadiṭṭhi<br>
         2. Сомнения · Vicikicchā<br>
-        3. Привязанность к правилам и ритуалам· Sīlabbataparāmāsa<br>
+        3. Привязанность к правилам и ритуалам · Sīlabbataparāmāsa<br>
         4. Чувственные желания · Kāmarāga<br>
         5. Недоброжелательность · Vyāpāda</div>
     </div>
     <div class="ftg-hi">
       <div class="ftg-lbl">Высшие 5 / Upper</div>
-      <div class="ftg-items">6. Желание тонкоматериального существования· Rūparāga<br>
+      <div class="ftg-items">6. Желание тонкоматериального существования · Rūparāga<br>
         7. Желание нематериального существования · Arūparāga<br>
         8. Самомнение / Заносчивость / Надменность · Māna<br>
         9. Беспокойство · Uddhacca<br>
@@ -990,99 +1426,31 @@ body {
     <div class="stage">
         <div class="st-title"><div class="sb">III</div>Невозвращающийся</div>
         <div class="st-langs">Non-Returner · Anāgāmi · Чистые Обители · Suddhāvāsa</div>
-        <div class="frow"><span class="ft ft-gone">✗ 1–5 устранены</span><span class="ft ft-stay">Желание тонкоматериального существования</span><span class="ft ft-stay">Желание нематериального существования</span><span class="ft ft-stay">Самомнение / Заносчивость / Надменность, Беспокойство, Неведение</span></div>
+        <div class="frow"><span class="ft ft-gone">✗ 1–5 устранены</span><span class="ft ft-stay">Желание тонкоматериального существования</span><span class="ft ft-stay">Желание нематериального существования</span><span class="ft ft-stay">Самомнение, Беспокойство, Неведение</span></div>
       </div>
     <div class="stage">
         <div class="st-title"><div class="sb sb-gold">IV</div>Арахант</div>
         <div class="st-langs">Arahant · Arahaṃ · Паринирвана · Parinibbāna</div>
-        <div class="frow"><span class="ft ft-gone">✗ Все 10 оков устранены</span><span class="ft ft-free">Полное очищение, Совершенная незамутненность, Совершенная ясность ума</span></div>
+        <div class="frow"><span class="ft ft-gone">✗ Все 10 оков устранены</span><span class="ft ft-free">Полное очищение · Совершенная незамутнённость · Совершенная ясность ума</span></div>
       </div>
   </div>
 </div>
-    <div class="card c-sl">
-  <div class="ch">
-      <span class="cn">08</span>
-      <div class="ct">7 Стадий Очищения</div>
-      <div class="ce">Seven Purifications</div>
-      <div class="cp">Satta Visuddhi</div>
-    </div>
-  <div class="cb">
-    <div class="purif">
-        <div class="pcircle">1</div>
-        <div>
-          <div class="ir" style="font-size:8.5pt;">Очищение нравственности</div>
-          <div class="ie">Purification of Virtue</div>
-          <div class="ip">Sīla-visuddhi</div>
-        </div>
-      </div>
-    <div class="purif">
-        <div class="pcircle">2</div>
-        <div>
-          <div class="ir" style="font-size:8.5pt;">Очищение ума</div>
-          <div class="ie">Purification of Mind</div>
-          <div class="ip">Citta-visuddhi</div>
-        </div>
-      </div>
-    <div class="purif">
-        <div class="pcircle">3</div>
-        <div>
-          <div class="ir" style="font-size:8.5pt;">Очищение воззрений</div>
-          <div class="ie">Purification of View</div>
-          <div class="ip">Diṭṭhi-visuddhi</div>
-        </div>
-      </div>
-    <div class="purif">
-        <div class="pcircle">4</div>
-        <div>
-          <div class="ir" style="font-size:8.5pt;">Очищение от сомнений</div>
-          <div class="ie">Overcoming Doubt</div>
-          <div class="ip">Kaṅkhāvitaraṇa-visuddhi</div>
-        </div>
-      </div>
-    <div class="purif">
-        <div class="pcircle">5</div>
-        <div>
-          <div class="ir" style="font-size:8.5pt;">Очищение знанием пути и не-пути</div>
-          <div class="ie">Knowledge of Path &amp; Non-Path</div>
-          <div class="ip">Maggāmagga-ñāṇadassana-visuddhi</div>
-        </div>
-      </div>
-    <div class="purif">
-        <div class="pcircle">6</div>
-        <div>
-          <div class="ir" style="font-size:8.5pt;">Очищение знанием прохождения</div>
-          <div class="ie">Knowledge &amp; Vision of the Way</div>
-          <div class="ip">Paṭipadā-ñāṇadassana-visuddhi</div>
-        </div>
-      </div>
-    <div class="purif">
-        <div class="pcircle pcircle-g">7</div>
-        <div>
-          <div class="ir" style="font-size:8.5pt;">Очищение знанием и видением</div>
-          <div class="ie">Purification by Knowledge &amp; Vision</div>
-          <div class="ip">Ñāṇadassana-visuddhi</div>
-        </div>
-      </div>
-  </div>
-</div>
-  </div>
   <div class="pfooter">
         <span>ВИПАССАНА · MAHĀSI SAYĀDAW TRADITION · THERAVĀDA</span>
-        <span>Стр. 4 из 5 · 4 Стадии · 7 Очищений</span>
+        <span>Стр. 6 из 7 · 4 Стадии Пробуждения · Cattāro Ariyapuggalā</span>
       </div>
-</div><div class="page page-break page-portrait">
-  <div class="hdr" style="text-align:left;margin-bottom:10px;padding-bottom:8px;">
-    <div class="hdr-tag">Стр. 5 · Три Драгоценности · Ti-Ratana</div>
-    <div class="hdr-title" style="font-size:15pt;">09–11 · Качества Будды · Дхаммы · Сангхи</div>
-    <div class="hdr-pali">Buddhaguṇā · Dhammaguṇā · Saṅghaguṇā</div>
-  </div>
+</div><div class="page-pt page-break">
+  <div class="hdr">
+      <div class="hdr-tag">Стр. 7 · Три Драгоценности · Ti-Ratana</div>
+      <div class="hdr-title">Качества Будды · Дхаммы · Сангхи</div>
+      <div class="hdr-pali" style="font-size:9pt;">Buddhaguṇā · Dhammaguṇā · Saṅghaguṇā</div>
+    </div>
   <div class="sdiv">Будда · Buddha · Дхамма · Dhamma · Сангха · Saṅgha</div>
   <div class="grid col3">
     <div class="card c-warm">
   <div class="ch">
-    <span class="cn">09 · Три Драгоценности · Ti-ratana</span>
+    <span class="cn">09</span>
     <div class="ct">Качества Будды</div>
-    <div class="ce">Qualities of the Buddha</div>
     <div class="cp">Buddhaguṇā · Nava Itipiso</div>
   </div>
   <div class="cb">
@@ -1114,10 +1482,12 @@ body {
     <div class="qitem">
         <div class="qpa">Anuttaro purisa-damma-sārathi</div>
         <div class="qru">Несравненный в укрощении тех, кого следует укротить</div>
+        <div class="qex">Несравненный в усмирении и обучении учеников</div>
       </div>
     <div class="qitem">
         <div class="qpa">Satthā deva-manussānaṃ</div>
         <div class="qru">Учитель людей, дэвов и брахм</div>
+        <div class="qex">Предводитель и учитель всех миров, достойный почитания</div>
       </div>
     <div class="qitem">
         <div class="qpa">Buddho</div>
@@ -1135,7 +1505,6 @@ body {
   <div class="ch">
       <span class="cn">10</span>
       <div class="ct">Качества Дхаммы</div>
-      <div class="ce">Qualities of the Dhamma</div>
       <div class="cp">Dhammaguṇā</div>
     </div>
   <div class="cb">
@@ -1152,12 +1521,12 @@ body {
     <div class="qitem">
         <div class="qpa" style="color:var(--jade-hd);">Akāliko</div>
         <div class="qru">Действующая без промедления</div>
-        <div class="qex">Плоды практики приходят немедленно, без откладывания на будущее</div><div class="qen">Immediate / timeless — results without delay</div>
+        <div class="qex">Плоды практики приходят немедленно, без откладывания</div><div class="qen">Immediate / timeless — results without delay</div>
       </div>
     <div class="qitem">
         <div class="qpa" style="color:var(--jade-hd);">Ehipassiko</div>
         <div class="qru">Призывает прийти и увидеть</div>
-        <div class="qex">«Приди и убедись сам» — открыта для личной проверки</div><div class="qen">Come &amp; See for Yourself — invites direct investigation</div>
+        <div class="qex">«Приди и убедись сам» — открыта для личной проверки</div><div class="qen">Come &amp; See for Yourself</div>
       </div>
     <div class="qitem">
         <div class="qpa" style="color:var(--jade-hd);">Opanayiko</div>
@@ -1175,7 +1544,6 @@ body {
   <div class="ch">
       <span class="cn">11</span>
       <div class="ct">Качества Сангхи</div>
-      <div class="ce">Qualities of the Saṅgha</div>
       <div class="cp">Saṅghaguṇā</div>
     </div>
   <div class="cb">
@@ -1228,13 +1596,15 @@ body {
 </div>
   </div>
   <div class="namo">
-  Namo Tassa Bhagavato Arahato Sammāsambuddhassa ✦
-  Vayadhammā saṅkhārā, appamādena sampādethā
-  — Всё обусловленное непостоянно; будь усерден в практике —
+  Namo Tassa Bhagavato Arahato Sammāsambuddhassa <br>✦
+  Handa dāni bhikkhave āmantayāmi vo:
+vayadhammā saṅkhārā, appamādena sampādetha<br>
+  — Итак, монахи, я обращаюсь к вам: все обусловленное подвержено распаду;
+достигайте (цели), будьте усердны в практике (ДН 16) 
 </div>
-  <div class="pfooter">
+  <div class="pfooter pfooter-pt">
         <span>ВИПАССАНА · MAHĀSI SAYĀDAW TRADITION · THERAVĀDA</span>
-        <span>Стр. 5 из 5 · Три Драгоценности · Ti-Ratana</span>
+        <span>Стр. 7 из 7 · Три Драгоценности · Ti-Ratana</span>
       </div>
 </div>
 </body>
